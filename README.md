@@ -4,6 +4,16 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 # 多模态
 
+### 多模态综述
+
+|paper|源码|收录|简介|个人笔记|网上讲解|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|[Multimodal Machine Learning: A Survey and Taxonomy](https://ieeexplore.ieee.org/document/8269806)|-|IEEE 2019|-|-|-|
+|[Multimodal Learning with Transformers: A Survey](https://arxiv.org/abs/2206.06488)|-|2022|-|-|-|
+
+### 多模态经典模型
+
+
 ### 多模态对话
 
 |paper|源码|收录|简介|个人笔记|
@@ -27,7 +37,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 |paper|源码|收录|简介|个人笔记|网上讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[Two-Stream Convolutional Networks for Action Recognition in Videos](https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html)|  -   | NIPS 2014 |               视频领域中应用深度学习的开山之作               | [笔记](https://friedrichor.github.io/Paper-List/Multimodal/视频领域/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos.html) |[视频](https://www.bilibili.com/video/BV1mq4y1x7RU/)|
-|[VideoBERT: A Joint Model for Video and Language Representation Learning](https://ieeexplore.ieee.org/document/9009570)|-|ICCV 2019|对动作分类任务直接进行 zero-shot 推理时，就能与先前的有监督训练好的 S3D 取得差不多的效果|[笔记](https://friedrichor.github.io/Paper-List/Multimodal/视频领域/VideoBERT：A%20Joint%20Model%20for%20Video%20and%20Language%20Representation%20Learning.html)||
+|[VideoBERT: A Joint Model for Video and Language Representation Learning](https://ieeexplore.ieee.org/document/9009570)|-|ICCV 2019|对动作分类任务直接进行 zero-shot 推理时，就能与先前的有监督训练好的 S3D 取得差不多的效果|[笔记](https://friedrichor.github.io/Paper-List/Multimodal/视频领域/VideoBERT：A%20Joint%20Model%20for%20Video%20and%20Language%20Representation%20Learning.html)|-|
 
 
 # NLP
