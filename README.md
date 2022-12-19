@@ -13,6 +13,10 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 ### 多模态经典模型
 
+|paper|源码|收录|简介|个人笔记|网上讲解|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|[ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision](http://proceedings.mlr.press/v139/kim21k.html)|[code](https://github.com/dandelin/vilt)|ICML 2021|**ViLT**; 视觉和语言预训练 (Vision-and-Language Pre-training, VLP) 提高了各种视觉和语言联合下游任务的性能，作者提出了很小的 VLP 模型|[笔记](https://friedrichor.github.io/Paper-List/Multimodal/)|[视频](https://www.bilibili.com/video/BV14r4y1j74y/)|
+|[Learning Transferable Visual Models From Natural Language Supervision]()|[code](https://github.com/OpenAI/CLIP)|ICML 2021|**CLIP**; 对比学习; Zero-shot; Prompt; 迁移能力很强，仅仅 zero-shot 就能和有监督训练的模型打成平手|[笔记](https://friedrichor.github.io/Paper-List/Multimodal/多模态经典模型/CLIP.html)|[视频](https://www.bilibili.com/video/BV1SL4y1s7LQ/)|
 
 ### 多模态对话
 
@@ -21,6 +25,10 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 |[Learning to Respond with Stickers: A Framework of Unifying Multi-Modality in Multi-Turn Dialog](https://arxiv.org/abs/2003.04679)|[code](https://github.com/gsh199449/stickerchat)|WWW 2020|open-domain; 检索式; 可回复出表情包|-|
 |[Towards Expressive Communication with Internet Memes: A New Multimodal Conversation Dataset and Benchmark](https://arxiv.org/abs/2109.01839)|[code](https://github.com/lizekang/DSTC10-MOD)|-|open-domain; 检索式; 可回复出表情包|-|
 |[Multimodal Dialogue Response Generation](https://aclanthology.org/2022.acl-long.204/)|[code](https://aclanthology.org/2022.acl-long.204/)|ACL 2022|**Divter**; open-domain; 生成式; 可生成图像|[笔记](https://friedrichor.github.io/Paper-List/Multimodal/多模态对话/Multimodal%20Dialogue%20Response%20Generation.html)|
+
+### Text-to-Image
+
+
 
 ### 多模态情感分析
 
@@ -41,6 +49,16 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 
 # NLP
+
+### 经典模型
+
+|paper|源码|收录|简介|个人笔记|网上讲解|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| [Attention is All you Need](https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html) |-|   NIPS 2017    |                    **Transformer** 的提出                    |                              -                               | [视频](https://www.bilibili.com/video/BV1pu411o7BE/) |
+| [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://aclanthology.org/N19-1423/) | [code](https://github.com/google-research/bert) | NAACL-HLT 2017 | **BERT**; 在 11 个不同的 NLP 任务中取得 SOTA，NLP 中里程碑式的成果 | [笔记](https://friedrichor.github.io/Paper-List/NLP/经典模型/BERT.html) | [视频](https://www.bilibili.com/video/BV1PL411M7eQ/) |
+
+
+### 对话
 
 
 # CV
