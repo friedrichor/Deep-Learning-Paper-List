@@ -86,9 +86,9 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 |paper|源码| 收录 |简介|个人笔记|网上讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|[An Image Is Worth 16x16 Words: Transformers For Image Recognition At Scale](https://arxiv.org/abs/2010.11929)|[code](https://github.com/google-research/vision_transformer)|ICLR 2021|**Vision Transformer**|[笔记](https://friedrichor.github.io/Paper-List/CV/经典模型/Vision%20Transformer.html)|[博客](https://blog.csdn.net/qq_37541097/article/details/118242600)；[视频](https://www.bilibili.com/video/BV1Jh411Y7WQ/)；<br>[视频(代码)](https://www.bilibili.com/video/BV1AL411W7dT/)|
-|[Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030)|[code](https://github.com/microsoft/Swin-Transformer)|ICCV 2021|**Swin Transformer**|-|[博客](https://blog.csdn.net/qq_37541097/article/details/121119988)；[视频](https://www.bilibili.com/video/BV1pL4y1v7jC/)；<br>[视频(代码)](https://www.bilibili.com/video/BV1yg411K7Yc/)|
-|[A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545)|[code](https://github.com/facebookresearch/ConvNeXt)|CVPR 2022|**ConvNeXt**|-|[博客](https://blog.csdn.net/qq_37541097/article/details/122556545)；[视频](https://www.bilibili.com/video/BV1SS4y157fu/)；<br>[视频(代码)](https://www.bilibili.com/video/BV14S4y1L791/)|
+|[An Image Is Worth 16x16 Words: Transformers For Image Recognition At Scale](https://arxiv.org/abs/2010.11929)|[code](https://github.com/google-research/vision_transformer)|ICLR 2021|**Vision Transformer**|[笔记](https://friedrichor.github.io/Paper-List/CV/经典模型/Vision%20Transformer.html)|[博客](https://blog.csdn.net/qq_37541097/article/details/118242600)；<br>[视频](https://www.bilibili.com/video/BV1Jh411Y7WQ/)；<br>[视频(代码)](https://www.bilibili.com/video/BV1AL411W7dT/)|
+|[Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030)|[code](https://github.com/microsoft/Swin-Transformer)|ICCV 2021|**Swin Transformer**|-|[博客](https://blog.csdn.net/qq_37541097/article/details/121119988)；<br>[视频](https://www.bilibili.com/video/BV1pL4y1v7jC/)；<br>[视频(代码)](https://www.bilibili.com/video/BV1yg411K7Yc/)|
+|[A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545)|[code](https://github.com/facebookresearch/ConvNeXt)|CVPR 2022|**ConvNeXt**|-|[博客](https://blog.csdn.net/qq_37541097/article/details/122556545)；<br>[视频](https://www.bilibili.com/video/BV1SS4y157fu/)；<br>[视频(代码)](https://www.bilibili.com/video/BV14S4y1L791/)|
 
 
 ### 目标检测
