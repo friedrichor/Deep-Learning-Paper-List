@@ -34,12 +34,13 @@
 在原论文中，作者提出对于每张图片，从2000个候选框中采集64个候选区域。对于每个候选区域，它与真实框(ground-truth)的 IoU 大于0.5，那么就把他划分成正样本，把与每个真实框的 IoU 的最大的值在0.1~0.5的认定为负样本。
 
 ## RoI pooling
-![在这里插入图片描述](https://img-blog.csdnimg.cn/4a32a7b277024b1b8da8355d6f6d3539.png?,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZnJpZWRyaWNob3I=,size_16,color_FFFFFF,t_70,g_se,x_16$#pic_center)
+<center><img src="https://img-blog.csdnimg.cn/0e1c7522823745dfb4409847a147ae34.png">
 有了候选区域样本之后，使用RoI pooling将每个样本缩放成统一的尺寸。
 
 如下图，将图片划分成7×7等分，对于每一小块区域执行最大池化(max pooling)操作，这样就得到了一个7×7的特征矩阵。无论候选区域的尺寸是多大的，都将缩放成7×7矩阵，这就不限制输入图像的尺寸（与R-CNN不同，R-CNN要求输入图像尺寸为227×227）。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/b01032113e7e4c74b149b6f20c0c6558.png?,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZnJpZWRyaWNob3I=,size_19,color_FFFFFF,t_70,g_se,x_16#pic_center)
+<center><img src="https://img-blog.csdnimg.cn/0e1c7522823745dfb4409847a147ae34.png">
+
 ## 分类器
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/f15e88c05e5a4adb9111c527f63a0c4d.png?,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZnJpZWRyaWNob3I=,size_20,color_FFFFFF,t_70,g_se,x_16)
 输出 N+1 个类别的概率（N为检测目标的种类，1为背景）共 N+1 个结点。分类器即上图中蓝色框部分，全连接层（FC）即需要 N+1 个结点。
@@ -59,11 +60,12 @@ $\hat{G_x},\hat{G_y},\hat{G_w},\hat{G_h}$分别为最终预测的边界框中心
 根据上面的公式可以看出$d_x,d_y$就是用来调整边界框中心位置的，$d_w,d_h$用来调整宽高，从而把黄色区域调整到红色区域。
 
 ## Multi-task loss
-![在这里插入图片描述](https://img-blog.csdnimg.cn/1165edb0d44e481384703082a755d5c9.png)
-$p$是分类器预测的 softmax 概率分布$p=(p_0, ..., p_k)$，$p_0$即是预测为背景的概率，以此类推
-$u$对应目标真实类别标签
-$t^u$对应边界框回归器预测的对应类别$u$的回归参数$(t_x^u,t_y^u,t_w^u,t_h^u)$
-$v$对应真实目标的边界框回归参数$(v_x,v_y,v_w,v_h)$
+  <center><img src="https://img-blog.csdnimg.cn/1165edb0d44e481384703082a755d5c9.png"></center>    
+
+$p$ 是分类器预测的 softmax 概率分布 $p=(p_0, ..., p_k)$，$p_0$ 即是预测为背景的概率，以此类推  
+$u$ 对应目标真实类别标签  
+$t^u$对应边界框回归器预测的对应类别 $u$ 的回归参数 $(t_x^u,t_y^u,t_w^u,t_h^u)$  
+$v$ 对应真实目标的边界框回归参数 $(v_x,v_y,v_w,v_h)$    
 <hr>
 
 ### 分类损失：
@@ -88,15 +90,15 @@ $v$对应真实目标的边界框回归参数$(v_x,v_y,v_w,v_h)$
 其中，$[u\geq1]$是艾佛森括号，当$u\geq1$时，这个值为1，$u<1$时即为0。$u\geq1$时，说明这是检测目标中的一个类别，这就是正样本；$u<1$时（即$u=0$），就说明是负样本，那么损失函数中就没有边界框回归损失这一项。
 
 至于$(v_x,v_y,v_w,v_h)$是如何计算的，同样使用到了下图。
-<img src="https://img-blog.csdnimg.cn/e99b192eb8f44cd4a5f69df7bd449bc4.png" width="40%">$\quad\quad\quad$ <img src="https://img-blog.csdnimg.cn/3f6c18ae610042c1ba42a0195d14628f.png" width="40%">
+<img src="https://img-blog.csdnimg.cn/e99b192eb8f44cd4a5f69df7bd449bc4.png" width="40%">$\quad\quad\quad$ <img src="https://img-blog.csdnimg.cn/3f6c18ae610042c1ba42a0195d14628f.png" width="40%">  
 $v_x=(G_x-P_x)/P_w$，同理$v_y=(G_y-P_y)/P_h$
 $v_w=\ln(G_w/P_w)$，同理$v_h=\ln(G_h/P_h)$
 <hr>
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/bf2296c420a24db2b78c1abac26e973a.png#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/bf2296c420a24db2b78c1abac26e973a.png#pic_center)  
 展开，上式 $=smooth_{L1}(t_x^u-v_x)+smooth_{L1}(t_y^u-v_y)+smooth_{L1}(t_w^u-v_w)+smooth_{L1}(t_h^u-v_h)$
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/e1616888ef70444bb090ab572c7abb5c.png#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/e1616888ef70444bb090ab572c7abb5c.png#pic_center)  
 关于损失函数的学习，可以参考：[回归损失函数1：L1 loss, L2 loss以及Smooth L1 Loss的对比](https://www.cnblogs.com/wangguchangqing/p/12021638.html)
 
 # Fast R-CNN框架
