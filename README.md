@@ -70,6 +70,14 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 ### 对话
 
+|paper|源码|收录|简介|个人笔记|网上讲解|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|||||||
+|||||||
+|||||||
+|||||||
+|||||||
+
 
 # CV
 
