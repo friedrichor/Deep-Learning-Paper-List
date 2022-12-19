@@ -4,13 +4,20 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 # 多模态
 
+### 多模态对话
+
+|paper|源码|收录|简介|个人笔记|
+|:-:|:-:|:-:|:-:|:-:|
+|[Learning to Respond with Stickers: A Framework of Unifying Multi-Modality in Multi-Turn Dialog](https://arxiv.org/abs/2003.04679)|[code](https://github.com/gsh199449/stickerchat)|WWW 2020|开放域，检索式，可回复出表情包|-|
+|[Towards Expressive Communication with Internet Memes: A New Multimodal Conversation Dataset and Benchmark](https://arxiv.org/abs/2109.01839)|[code](https://github.com/lizekang/DSTC10-MOD)|-|开放域，检索式，可回复出表情包|-|
+|[Multimodal Dialogue Response Generation](https://aclanthology.org/2022.acl-long.204/)|[code](https://aclanthology.org/2022.acl-long.204/)|ACL 2022|开放域，生成式，可生成图像|[笔记](https://friedrichor.github.io/Paper-List/Multimodal/多模态对话/Multimodal%20Dialogue%20Response%20Generation.html)|
 
 # NLP
 
 
 # CV
 
-## 图像分类
+### 图像分类
 
 
 |paper|源码| 收录 |简介|个人笔记|网上讲解|
@@ -20,7 +27,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 |[A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545)|[code](https://github.com/facebookresearch/ConvNeXt)|CVPR 2022|ConvNeXt |-|[博客](https://blog.csdn.net/qq_37541097/article/details/122556545)；[视频](https://www.bilibili.com/video/BV1SS4y157fu/)；[视频(代码)](https://www.bilibili.com/video/BV14S4y1L791/)|
 
 
-## 目标检测
+### 目标检测
 
 |paper|源码|收录|简介|个人笔记|网上讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
