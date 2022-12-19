@@ -12,6 +12,13 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 |[Multimodal Machine Learning: A Survey and Taxonomy](https://ieeexplore.ieee.org/document/8269806)|-|IEEE 2019|-|-|-|
 |[Multimodal Learning with Transformers: A Survey](https://arxiv.org/abs/2206.06488)|-|2022|-|-|-|
 
+### 多模态数据集
+
+|paper|源码|收录|简介|个人笔记|
+|:-:|:-:|:-:|:-:|:-:|
+| [Image-Chat: Engaging Grounded Conversations](https://aclanthology.org/2020.acl-main.219/) |  -   |ACL 2020|Image-Chat|-|
+|[PhotoChat: A Human-Human Dialogue Dataset With Photo Sharing Behavior For Joint Image-Text Modeling](https://aclanthology.org/2021.acl-long.479/)|  -   |ACL/IJCNLP 2021|**PhotoChat**; 提出两个任务: 分享图片意图预测, 图像检索|-|
+
 ### 多模态经典模型
 
 |paper|源码|收录|简介|个人笔记|网上讲解|
