@@ -1,0 +1,629 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Vision Transformer</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#0-前言">0. 前言</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n4"><a class="md-toc-inner" href="#1-背景">1. 背景</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n9"><a class="md-toc-inner" href="#2-现状分析">2. 现状分析</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n24"><a class="md-toc-inner" href="#3-任务结论简介）">3. 任务&amp;结论（简介）</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n28"><a class="md-toc-inner" href="#4-整体框架">4. 整体框架</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n37"><a class="md-toc-inner" href="#5-流程">5. 流程</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n61"><a class="md-toc-inner" href="#6-模型">6. 模型</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n62"><a class="md-toc-inner" href="#embedding层">Embedding层</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n65"><a class="md-toc-inner" href="#transformer-encoder层">Transformer Encoder层</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n75"><a class="md-toc-inner" href="#mlp-head">MLP Head</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n77"><a class="md-toc-inner" href="#7-部分实验">7. 部分实验</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n79"><a class="md-toc-inner" href="#数据集">数据集</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n81"><a class="md-toc-inner" href="#模型变体">模型变体</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n85"><a class="md-toc-inner" href="#position-embedding消融实验">Position Embedding消融实验</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n90"><a class="md-toc-inner" href="#8-改进思路相关论文">8. 改进思路&amp;相关论文</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n92"><a class="md-toc-inner" href="#相关文献及下载地址">相关文献及下载地址</a></span></p></div><h1 id='0-前言'><span>0. 前言</span></h1><p><span>论文标题：An Image Is Worth 16x16 Words: Transformers For Image Recognition At Scale</span>
+<span>论文网址：</span><a href='https://arxiv.org/abs/2010.11929'><span>https://arxiv.org/abs/2010.11929</span></a>
+<span>源码网址：</span><a href='https://github.com/google-research/vision_transformer'><span>https://github.com/google-research/vision_transformer</span></a></p><h1 id='1-背景'><span>1. 背景</span></h1><p>&emsp;&emsp;<span>Transformer结构最初提出是针对NLP领域的。</span><font color=#6699FF><span>尤其是BERT预训练语言模型，在大量通用语料上进行预训练，然后在任务相关的数据集上再训练并进行fine-tune（微调），这样BERT模型就可以应用到不同的任务中，其论文发表时提及在11个不同的NLP任务中取得SOTA表现，是NLP发展史上里程碑式的成就。</span></font><span>那么Transformer结构应用到CV领域是否同样会取得良好的结果呢？这就是本文所要探讨的。</span></p><p>&emsp;&emsp;<span>在CV领域，注意力机制通常都依赖于卷积网络，要么与卷积网络结合应用，要么在保持整体结构的条件下替换卷积网络的某些组成部分。本文证明了注意力机制不必依赖于CNN，而是将Transformer直接应用于图像patches序列，这也可以很好地完成图像分类任务。</span></p><p>&emsp;&emsp;<span>文章提出了Vision Transformer(以下简称 </span><strong><span>ViT</span></strong><span>)模型，将它应用于对大量数据进行预训练并进行多个中型或小型图像的识别基准测试（如ImageNet, CIFAR-100, VTAB等）。与先前取得SOTA表现的卷积网络相比较，Vision Transformer取得了良好成果，同时需要训练的计算资源也更少。</span></p><p>&emsp;&emsp;<span>受Transformer结构中的self-attention启发，人们开始尝试将类似CNN的架构与self-attention相结合，也有一些将其完全替代卷积。后者虽然理论上很有效，但由于使用了特殊的attention模式，还不能在当时的硬件加速器上进行拓展。因此，经典的ResNet类（包括与其类似的）架构仍是SOTA表现。</span></p><h1 id='2-现状分析'><span>2. 现状分析</span></h1><p>&emsp;&emsp;<span>Transformer结构最初是应用于NLP领域的，在很多NLP任务中都取得SOTA效果，是里程碑式的成就，使得目前NLP任务中首选的结构大多都是Transformer。</span><font color=#6699FF><span>（以往都是采用卷积的形式，如RNN、LSTM这样的时序网络，但这都存在一些明显的问题，如RNN的记忆长度比较短，于是提出了LSTM解决记忆的问题，但他们都有一个额外的问题，就是无法并行化，只能先计算T0时刻的数据，然后才能计算T0+1时刻的数据，这样的话训练效率就比较低。而Transformer就可以解决以上问题，记忆长度理论上可以无限长，同时可以并行化）</span></font></p><p>&emsp;&emsp;<span>Transformer中比较重要的就是Self-attention和Multi-head Self-attention，这也是为什么Transformer效果比较好的一个原因。</span><strong><span>关于Self-attention和Multi-head Self-attention我会在后面举例说明一下。</span></strong></p><p>&emsp;&emsp;<span>针对图像使用self-attention最开始的应用是要求每个pixel都关注其他的pixel。由于pixel数目二次的代价，这并不能改变实际的输入大小。为了将Transformer应用到图像中，近年来有过很多尝试：</span></p><ol start='' ><li><span>Parmar等人仅在每个查询的pixel的局部邻近范围内应用self-attention，而不是全局应用；</span></li><li><span>Hu等人、Ramachandran等人、Zhao等人都使用了局部的Multi-Head点积self-attention blocks来完全替代卷积；</span></li><li><span>Child等人提出了Sparse Transformers，采用可扩展的近似全局的self-attention，以便应用于图像；</span></li><li><span>Weissenborn等人将self-attention应用于不同尺寸的blocks。</span></li></ol><p>&emsp;&emsp;<span>与本文所讲的ViT模型最相似的是Cordonnier等人2020年提出的一个模型：从输入图像中提取大小为2×2的patches并在顶层应用self-attention。此外，Cordonnier等人提出的模型只是使用2×2 pixels的小patch，这就使得该模型只适用于小分辨率的图像，但ViT(Vision Transformer)也可以处理中等分辨率的图像。</span></p><p>&emsp;&emsp;<span>另一个相关的模型是image GPT(iGPT)，它在降低图像分辨率和颜色空间后，将Transformer应用于图像pixels。该模型以无监督的方式作为生成模型进行训练，然后对结果进行fine-tune或线性探测，以获得分类性能。</span><font color=#6699FF><span>（这里其实和NLP任务中使用Transformer的过程是很相似，同样是无监督学习，以BERT为例，其通过一个可训练的[CLS]参数，将其连接一个分类器，通过fine-tune从而使模型能够进行相应的分类任务）</span></font></p><h1 id='3-任务结论简介）'><span>3. 任务&amp;结论（简介）</span></h1><p>&emsp;&emsp;<span>受Transformer在NLP领域成功扩展的启发，作者尝试将Transformer直接应用于CV领域。但应用于NLP领域的Transformer结构中，输入的内容是一个一个单词（通过将语句分词获得），然后才能进行embedding操作。那么对于图像来说，作者将一个图像分割成一些patches，并将这些patches进行embedding作为Transformer的输入。图像patches的操作就相当于NLP中tokens（words）的处理方式。然后作者用有监督的方式训练模型从而实现图像分类。</span><font color=#6699FF><span>（这里和BERT的训练方式是不一样的，BERT使用的是大量无标注语料，因此使用的是无监督学习，而无监督学习主要分为自回归(AR, auto regression)和自编码(AE, auto encoding)，BERT使用的就是AE方法，从损坏的输入数据中利用上下文信息重构原始数据，使用mask模型）</span></font></p><p>&emsp;&emsp;<span>在中型数据集（如ImageNet）上训练时，使用Transformer的效果并没有ResNet好，因为Transformer缺乏了CNN中固有的inductive biases，比如translation equivariance（平移等变性）和 locality（位置信息），也就是说当识别的物体在图像中的不同位置时，CNN是可以学习出来的，而Transformer很难学到，因此在数据量不足的数据集上训练时的效果并不是很好。</span></p><p>&emsp;&emsp;<span>然而，如果在大型数据集（14M-300M images）上训练，使用Transformer的训练效果是更好的。ViT模型在足够规模的数据集上训练时获得了很好的成果。在ImageNet-21k 或in-house JFT-300M上进行预训练时，ViT在多个图像识别任务中都击败或接近于SOTA。</span></p><h1 id='4-整体框架'><span>4. 整体框架</span></h1><p><img src="https://img-blog.csdnimg.cn/0dc5a2b0eba04a5a906ebc17f5c38ae8.png" referrerpolicy="no-referrer" alt="在这里插入图片描述">
+&emsp;&emsp;<span>将一个图像分割成固定尺寸的patches，线性嵌入每个patch，并在添加了Position Embedding，将得到的向量序列输入到标准的Transformer Encoder中。为了进行分类，在序列中添加了一个额外的可学习的 ”classification token” 。</span>
+<span>大体上可以分为三部分：</span></p><ol start='' ><li><span>Linear Projection of Flattened Patches（Embedding层）</span></li><li><span>Transformer Encoder（上图右侧的结构）</span></li><li><span>MLP Head（最终用于分类的层结构）</span></li></ol><h1 id='5-流程'><span>5. 流程</span></h1><ol start='' ><li><span>将输入的图片分成一个一个小的patches</span>
+<img src="https://img-blog.csdnimg.cn/2d4808f44e444898a294d0c5ea673bfa.png" referrerpolicy="no-referrer" alt="在这里插入图片描述"></li><li><span>将每个patches输入到Linear Projection of Flattened Patches（可以理解为Embedding层），通过Embedding层就可以把patches转换成一个个向量（图中粉色多边形部分 ），也就是token。</span>
+<img src="https://img-blog.csdnimg.cn/a3a192ad706c476e88250bb4ab27c004.png" referrerpolicy="no-referrer" alt="在这里插入图片描述"></li><li><span>在这一系列 token 前面加上一个 token（图中粉色星号部分 ，这个token是用于分类的，其实就和BERT结构很相似，对应的就是BERT中的[CLS]向量）</span>
+<img src="https://img-blog.csdnimg.cn/57b4db0269b2430ca3c1348253e0ae30.png" referrerpolicy="no-referrer" alt="在这里插入图片描述"></li><li><span>考虑位置信息，在每个token中添加Position Embedding（对应图中紫色部分）</span>
+<img src="https://img-blog.csdnimg.cn/f1428f8422a045e98de1ba36d9cf0c39.png" referrerpolicy="no-referrer" alt="在这里插入图片描述"></li><li><span>将最终的 token 输入到 Transformer Encoder（结构如整体框架右侧图所示，这一部分我会在后面讲述）中。</span></li></ol><center><img src="https://img-blog.csdnimg.cn/34f41123becf46dcb772862c6af3dad6.png" width="80%"></center><ol start='6' ><li><span>得到输出MLP Head（正常的Transformer Encoder输入多少个token就会有多少个输出，但ViT只是用于分类，因此只需要把第一个token经过encoder后的输出提取出来就行）</span></li></ol><center><img src="https://img-blog.csdnimg.cn/b8dd3fe1d3374e00a97fec2472fea90a.png" width="60%"></center><ol start='7' ><li><span>通过MLP Head得到最终的分类结果</span></li></ol><center><img src="https://img-blog.csdnimg.cn/99f5abedba43481397ca6995fc2d4302.png" width="30%"></center><h1 id='6-模型'><span>6. 模型</span></h1><h2 id='embedding层'><span>Embedding层</span></h2><p>&emsp;&emsp;<span>对于标准的Transformer，要求输入的是token序列，即二维矩阵[num_token, token_dim]。在代码实现中，直接通过一个卷积层来实现。以ViT-16为例，使用卷积核大小为16×16，stride为16，卷积核个数为768(即token_dim)，然后再将高度和宽度的维度进行展平。</span>
+<span>[224,224,3]-&gt;[14,14,768]-&gt;[196,768]</span></p><p>&emsp;&emsp;<span>在输入Transformer Encoder之前需要加上[class]token以及Position Embedding（两者都是可训练参数）：</span>
+&emsp;&emsp;<span>拼接[class]token：concat([1,768], [196,768]) -&gt; [197,768]</span>
+&emsp;&emsp;<span>叠加Position Embedding：[197,768] -&gt; [197,768]</span></p><h2 id='transformer-encoder层'><span>Transformer Encoder层</span></h2><center><img src="https://img-blog.csdnimg.cn/a12fc426cf2147bfaf9b383bdf42c360.png" width="25%">    <img src="https://img-blog.csdnimg.cn/c8d2a3530b664476be6ab22945ff5d8d.png" width="20%"></center><p><span>上图左侧这是论文里给出的Transformer Encoder结构，就是将Encoder Block重复堆叠L次。上图右侧是根据论文给出的源码重新画的结构（源码中在Multi-Head Attention后又进行了Dropout，但有实验用了DropPath（这个不是本文作者做的），效果是比Dropout好的）。</span></p><p><strong><span>Layer Normalization:</span></strong>
+<a href='https://pytorch.org/docs/master/generated/torch.nn.LayerNorm.html#torch.nn.LayerNorm'><span>Pytorch官方</span></a><span>给出了如下公式：</span>
+<img src="https://img-blog.csdnimg.cn/bca447ec2fcd4f0f934d3e36d1e0567c.png" referrerpolicy="no-referrer" alt="在这里插入图片描述">
+<span>推荐一个大佬的博文：</span><a href='https://blog.csdn.net/qq_37541097/article/details/117653177?spm=1001.2014.3001.5506'><span>Layer Normalization解析</span></a></p><p><strong><span>Multi-Head Attention:</span></strong></p><p><span>Transformer论文(Attention Is All You Need) 给出了如下结构：</span>
+<img src="https://img-blog.csdnimg.cn/2e976cc6618d420aa8526285eb728689.png#pic_center" referrerpolicy="no-referrer" alt="在这里插入图片描述">
+<span>对于Scaled Dot-Product Attention(self-attention)，有计算公式：</span>
+<img src="https://img-blog.csdnimg.cn/f92299c809374cfe9629a1a6e6d30b21.png#pic_center" referrerpolicy="no-referrer" alt="在这里插入图片描述">
+<span>结合Scaled Dot-Product Attention的结构与计算公式，举例如下：</span>
+<img src="https://img-blog.csdnimg.cn/333e361b85664eb0909d4ec7bf984093.png#pic_center" referrerpolicy="no-referrer" alt="在这里插入图片描述">
+<span>最终的效果就是</span></p><center><img src="https://img-blog.csdnimg.cn/2005583c9b0144a589d32090ccbd9566.png" width="50%"></center><p><span>Multi-Head Attention的计算其实就是基于self-attention(Scaled Dot-Product Attention)的，论文给出的计算公式如下：</span>
+<img src="https://img-blog.csdnimg.cn/cc72463f8a1a4a4994403154bff47f37.png#pic_center" referrerpolicy="no-referrer" alt="在这里插入图片描述">
+<span>举例如下：</span>
+<img src="https://img-blog.csdnimg.cn/bda9a075edc64f108f4e9be7eaf32865.png" referrerpolicy="no-referrer" alt="在这里插入图片描述">
+<strong><span>MLP Block:</span></strong></p><center><img src="https://img-blog.csdnimg.cn/c0d46513cfc04a05a4ccd42df13a9f35.png" width="30%"></center><p><span>根据源码可以知道MLP Block的结构如上图所示，就是 Dense全连接层（结点数变为输入的4倍） -&gt; GELU -&gt; Dropout -&gt;  Dense全连接层（还原成原来的数量） -&gt; Dropout </span></p><h2 id='mlp-head'><span>MLP Head</span></h2><p><span>训练ImageNet21k时用的是Linear Layer + tanh + Linear Layer，而如果是其他数据集的话，只有一个Linear Layer就足够了。</span></p><h1 id='7-部分实验'><span>7. 部分实验</span></h1><p>&emsp;&emsp;<span>论文评估了ResNet，Vision Transformer(ViT)和hybrid(CNN与Transformer结合)三种模型，对不同大小的数据集进行了预训练，并测评了很多benchmark（基准测试）任务。</span></p><h2 id='数据集'><span>数据集</span></h2><p>&emsp;&emsp;<span>为了探索模型的泛用性，使用ILSVRC-2012 ImageNet数据集1k分类和1.3M图像（下面都称为ImageNet），其超集ImageNet-21k有着21k分类和14M图像，JFT有着18k分类和303M高分辨率图像。将训练前的数据集与Kolesnikov等人的下游任务的测试集进行去重。将这些数据集上训练的模型应用到几个benchmark任务中：ImageNet上的原始验证标签和清理后的真实标签，, CIFAR-10/100，Oxford-IIIT Pets，Oxford Flowers-102。对于这些数据集，预处理采用Kolesnikov等人的方法。</span>
+&emsp;&emsp;<span>同时也评估了19-task VTAB classifification suite。VTAB中每个任务使用了1000个训练样例，对于不同任务评估low-data transfer。这些任务被分为三组：Natural任务（例如Pets, CIFAR等），Specialized任务（医疗和卫星图像），Structured任务（需要几何理解，如局部化）。</span></p><h2 id='模型变体'><span>模型变体</span></h2><p><span> </span><img src="https://img-blog.csdnimg.cn/1a28add423b34ecdaa7a09e4b72322f9.png#pic_center" referrerpolicy="no-referrer" alt="在这里插入图片描述"></p><p>&emsp;&emsp;<span>我们将ViT的配置建立在BERT的基础上，“Base”和“Large”模型直接采用BERT，此外添加了更大的“Huge”模型。例如，ViT-L/16表示具有输入patch的大小为16×16的“Large”变体。注意Transformer的序列长度与patch大小的平方成反比，因此patch尺寸较小的模型训练成本更高。</span></p><h2 id='position-embedding消融实验'><span>Position Embedding消融实验</span></h2><p>&emsp;&emsp;<span>不使用或使用不同维度的Position Embedding会对模型产生什么样的影响呢？</span></p><p>&emsp;&emsp;<span>论文附件处给出了在ImageNet 5-shot linear数据集上对Position Embedding消融的实验结果：</span>
+<span> </span><img src="https://img-blog.csdnimg.cn/b6a4c1f088b8417780c8a995f41b8181.png#pic_center" referrerpolicy="no-referrer" alt="在这里插入图片描述"></p><p>&emsp;&emsp;<span>如上表，当没有使用Position Embedding时，得到的结果是61.382%，而使用1维、二维或相对位置编码时，都达到了64%，与不使用Position Embedding时相差了3个百分点，而对于是使用了几维、使用什么方式的Position Embedding，这个差别是不大的。源码中默认使用的是1-D Pos. Emb.，因为一维的相对来说更简单，且参数比较少，效果也更好。</span></p><p>&emsp;&emsp;<span>关于使用不同的Position Embedding最终的结果差异不大这个问题，作者推测由于Transformer Encoder操作是在patch-level级别的输入，而不是pixel-level级别的输入，因此如何编码空间信息是不那么重要的。更具体地说，patch-level级别的输入，空间维度比原始的pixel-level小得多，例如14×14(patch)而不是224×224(pixel)，对于这些不同的位置编码策略，学习在这个分辨率中表示的空间关系更容易。尽管如此，网络学习的Position Embedding相似度取决于训练的超参数。</span></p><h1 id='8-改进思路相关论文'><span>8. 改进思路&amp;相关论文</span></h1><p><a href='https://zhuanlan.zhihu.com/p/440940056'><span>计算机视觉中的transformer模型创新思路总结</span></a></p><h1 id='相关文献及下载地址'><span>相关文献及下载地址</span></h1><ol start='' ><li><span>Vision Transformer</span>
+<span>论文名称：An Image Is Worth 16x16 Words: Transformers For Image Recognition At Scale</span>
+<span>论文网址：</span><a href='https://arxiv.org/abs/2010.11929'><span>https://arxiv.org/abs/2010.11929</span></a>
+<span>源码网址：</span><a href='https://github.com/google-research/vision_transformer'><span>https://github.com/google-research/vision_transformer</span></a></li><li><span>Transformer</span>
+<span>论文名称：Attention Is All You Need</span>
+<span>论文网址：</span><a href='https://arxiv.org/abs/1706.03762'><span>https://arxiv.org/abs/1706.03762</span></a></li><li><span>Layer Normalization</span>
+<span>论文名称：Layer Normalization</span>
+<span>论文网址：</span><a href='https://arxiv.org/abs/1607.06450'><span>https://arxiv.org/abs/1607.06450</span></a></li></ol></div></div>
+</body>
+</html>
