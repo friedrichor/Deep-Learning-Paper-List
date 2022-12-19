@@ -1,0 +1,598 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Multi-Modal Open-Domain Dialogue</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p>&nbsp;</p><p><span>论文标题：</span><a href='https://aclanthology.org/2021.emnlp-main.398.pdf'><span>Multi-Modal Open-Domain Dialogue</span></a>
+<span>论文网址：</span><a href='https://aclanthology.org/2021.emnlp-main.398/'><span>https://aclanthology.org/2021.emnlp-main.398/</span></a>
+<span>收录于：EMNLP 2021</span></p><h1 id='0-摘要'><span>0 摘要</span></h1><p>&emsp;&emsp;<span>最近在开放域会话 agent 的工作已经证明，通过对预训练数据和模型大小的大规模缩放，可以显著改善人性化和用户偏好的效果。然而，如果我们想要构建具有类似人类能力的会话 agent，我们必须扩展到文本之外。一个特别重要的主题就是看图像和交流感知的能力。为了让人类参与多模态对话，我们研究将 SOTA 的开放域对话 agent 和 SOTA 的视觉模型相结合。我们研究了不同的图像融合方案和领域自适应 (domain-adaptive) 的预训练和 fine-tuning 策略，并展示了我们得到的最佳模型在对莫太对话中优于现有的强模型，同时在基于文本的会话中与 BlenderBot (</span><a href='https://aclanthology.org/2021.eacl-main.24/'><span>Recipes for Building an Open-Domain Chatbot</span></a><span>) 有着相似的性能。我们还研究并在最终模型中纳入安全组件，并表明这些尝试不会降低模型的性能，以满足人类的偏好。</span></p><h1 id='1-introduction'><span>1 Introduction</span></h1><p>&emsp;&emsp;<span>人工智能的一个重要目标是构建满足人类对话的开放域会话 agent。事实上，人类与人工智能交互的未来是建立在能够在丰富的对话过程中展示多种不同的对话技能的模型之上的。最近的许多工作探索了搭建和训练对话 agent，这些对话 agent 可以在整个自然会话中融合这些技能，最终目标是为人类提供一种有趣且引人入胜的体验。再加上大规模模型训练的推进，这些模型正变得越来越像人，越来越有吸引力。</span></p><p>&emsp;&emsp;<span>然而，为了更好地像人，agent 必须能够在文本和视觉的上下文中进行对话，类似人类在现实世界中的交互方式；事实上，基于图像的交流能够自然地吸引人类。最近的工作已经超越了传统的、基于事实的任务，例如 图像描述 (image captioning) 或 视觉问答 (visual question answering) 能够在自然对话中对图像进行回复和交流的模型。</span></p><p>&emsp;&emsp;<span>在本文的工作中，作者探索了将大规模会话 agent 扩展到基于图像的对话。 作者将 在目标检测任务上训练的基于图像的模型 与 在大规模纯文本对话数据集上预训练的数十亿参数的 Transformers 的表示相结合，以产生基于视觉和文本上下文的回复。为了确保模型保持参与常规的、基于文本的会话的能力，在训练过程中包括了多任务处理，数据集明确设计用于向模型中灌输会话技能。 </span></p><p>&emsp;&emsp;<span>作者发现，在相关数据集和人类对偏好的评估上，他们的最佳模型在纯文本对话中与目前最好的模型打成平手。</span><font color="MediumBlue"><span>将图像特征 embeddings concat 到他们模型的编码器的输入端上</span></font><span> 比 </span><font color="MediumSlateBlue"><span>将 embeddings concat 到编码器的输出端</span></font><span> 更好，并且 </span><font color="MediumBlue"><span>使用基于空间的embedding</span></font><span> 比 </span><font color="MediumSlateBlue"><span>单向量的 embedding</span></font><span> 更好。同时，在图像对话机制下，本文的模型显著优于最近的强多模态对话模型。作者使用 ACUTE-Eval (</span><a href='https://arxiv.org/abs/1909.03087'><span>ACUTE-EVAL: Improved Dialogue Evaluation with Optimized Questions and Multi-turn Comparisons</span></a><span>) 通过两两人类判断测试几个指标，以表明该模型不仅更受人类青睐，而且可以在整个对话中讨论并参考视觉上下文。请参见 </span><em><span>Figure 1</span></em><span> 中与我们模型的对话的一个示例，</span><em><span>Figure 2</span></em><span> 和 </span><em><span>Figure 3</span></em><span> 中有随机选择的对话。 </span></p><p>&nbsp;</p><center><img src="https://img-blog.csdnimg.cn/85d7c480ab80454c9a7ff34ff68edf14.png" width="50%"></center><i>Figure 1:</i>  一个论文作者 (右) 和本文的 MMB DegenPos 模型 (左) 之间的对话。更多的示例在附录中。<p>&emsp;&emsp;<span>作者用他们最好的模型探索的一个重要途径就是安全——也就是说，确保模型不会冒犯他们的对话对象。对话安全确实是一个经过充分研究但仍未解决的研究领域，但图像对话环境下的安全研究相对较少。在本文的工作中，作者从 Image-Chat 数据集中检查了不同风格背景下的文本生成的性别偏见和毒性 (toxicity)。值得注意的是，在调整模型以减少 toxicity 和性别偏见，作者也发现人们对该模型的偏好并没有减少</span></p><h1 id='2-相关工作'><span>2 相关工作</span></h1><h2 id='21-多模态模型和任务'><span>2.1 多模态模型和任务</span></h2><p><strong><span>丰富的表征 (Rich Representations)：</span></strong><span>建模多模态输入，即 视觉+文本 的上下文，是一个研究得很好的领域。许多现有的文献探索了与我们的设置类似的架构，即使用基于 Transformer 的模型来联合编码文本和图像。此外也有工作尝试对标准的 self-attention 进行修改，通过加入额外的 co-attention layers 或 cross-attention layers。这些模型主要用于生成丰富的针对下游任务的图像和文本的联合表征，主要集中在编码方面。</span></p><p><strong><span>视觉对话/描述生成 (Visual Dialogue/Caption Generation)：</span></strong><span>许多任务被设计用来衡量模型在图像上下文中生成文本的能力。具体地说，COCO Captions 和 Flickr30k 要求模型为给定的图像生成其描述。各种 seq2seq 和 基于检索的模型已经被应用在这些任务上，然而他们除了描述图像无法进行其他的文本生成。最近有一些工作在 Visual Dialog 任务的上下文中探索了文本生成，该任务主要用于衡量在自然对话流程中回答关于图像相关问题的能力，而这与开放域对话任务有些不同。此外，最近有在图像上下文对开放域自然对话的尝试，例如在 Image-Chat 和 Image-grounded Conversations 的任务。同样，基于检索的模型 和  Seq2Seq 模型被用于在该任务中进行对话。</span></p><h2 id='22-多任务训练--使用预训练的表示'><span>2.2 多任务训练 / 使用预训练的表示</span></h2><p>&emsp;&emsp;<span>我们的多模态模型是在由在其它相关领域预训练构建的；具体地说，我们寻求融合大规模、单模态预训练的结果权重，以在下游多模态任务上实现良好的性能。在 NLP 和对话中，将预训练的表征适应于下游任务被证明是是成功的，而大规模多模态预训练被证明在其它下游多模态任务中是有效的。本文的工作本身并不包含多模态预训练，而是探索 “领域适应预训练 (domain-adaptive pre-training)” 或 “中间任务转移 (intermediate task transfer)”，即在对必要的下游任务进行训练/评价之前，通过中间的训练步骤将预训练的表征 “adapted” 到某个领域。我们还采用了多任务训练，以帮助扩展模型的适用性，并提高其在下游任务/评价中的性能；最近已经证明，这有助于基于图像和基于文本的任务。</span></p><h2 id='23-与现有模型的比较'><span>2.3 与现有模型的比较</span></h2><p><span>在这项工作中，作者将他们的模型与文献中已有的几个模型进行比较。</span></p><p><strong><span>BlenderBot：</span></strong><span>27亿参数的 Transformer seq2seq 模型，称为 “BST Generative 2.7B model”，对来自 pushshift.io 主持的第三方 Reddit 转储的 1.5B 评论进行了预训练，称为 “BlenderBot”。</span></p><p><strong><span>DialoGPT：</span></strong><span>一个基于 GPT-2 模型在公共领域社交媒体对话的 147M次交流中训练。</span></p><p><strong><span>Meena：</span></strong><span>一个在 341GB 会话上训练的 2.6B 个参数的 Transformer seq2seq 模型。</span></p><p><strong><span>Dodeca：</span></strong><span> dodecalDialogue 中的 Image+Seq2Seq 模型，这是一个 Transformer seq2seq 模型，其中编码器传递来自 ResNeXt-IG-3.5B 模型中的预训练的图像特征。我们使用他们在 Image-Chat 上微调的模型 (称为 “Dodeca”)。</span></p><p><strong><span>2AMMC：</span></strong><span>一个检索模型，其中多个 Transformer 被注意，以便利用 ResNeXt-IG-3.5B 和 Faster R-CNN 的图像特征的结合。本文使用 </span><a href='https://arxiv.org/abs/1912.12394'><span>All-in-One Image-Grounded Conversational Agents</span></a><span> 的 2AMMC 模型，因为该模型在 Image-Chat 的测试集上性能最好。</span></p><h1 id='3-模型架构'><span>3 模型架构</span></h1><p>&emsp;&emsp;<span>模型的输入是 </span><font color="Red"><span>视觉 和/或 文本 上下文</span></font><span>。作者尝试了编码图像的不同方法，还比较了在输出回复之前融合图像和文本表示的方法。</span></p><h2 id='31-image-encoders'><span>3.1 Image Encoders</span></h2><p>&emsp;&emsp;<span>将图像从 pixel 转换成向量表示是一个研究得很好的问题，作者尝试使用了两种不同的图像编码器，使用来自 ResNeXt 和 Fast R-CNN 的特征，以确定哪个最适合本文的任务。有关这些图像编码器的描述，请参见附录 A。</span></p><hr><p><span>附录A：</span></p><hr><h2 id='32-多模态架构'><span>3.2 多模态架构</span></h2><p>&emsp;&emsp;<span>为了联合编码视觉和文本上下文，对标准的 Transformer 结构进行修改，由此实验了融合图像表征和文本表征以生成输出序列的不同方法。本文的 Transformer 模型结构遵循 BlenderBot (</span><a href='https://aclanthology.org/2021.eacl-main.24/'><span>Recipes for Building an Open-Domain Chatbot</span></a><span>)，具有 2个 encoder layer，24 个 decoder layer，2560 维的 embedding 和 32个 attention head，权重从一个 27 亿参数的模型 (在 Reddit 1.5B 评论进行预训练的) 进行初始化，以生成一个使得整个评论完整为条件的评论 (generate a comment conditioned on the full thread leading up to the comment)。从这个基础模型出发，探索了两种可能的融合方案。</span></p><p>&emsp;&emsp;<strong><span>后期融合 (Late Fusion)：</span></strong><span>后期融合方法与 </span><a href='https://aclanthology.org/2020.acl-main.222/'><span>The Dialogue Dodecathlon: Open-Domain Knowledge and Image Grounded Conversational Agents</span></a><span> 的方法相同，其中编码后的图像被投影到和 Transformer encoder 的 text encoding 相同的维度，与该输出 concat 作为额外的 ”token“ 输出，并最终一起作为输入传入到解码器。</span></p><p>&emsp;&emsp;<strong><span>前期融合 (Early Fusion)：</span></strong><span>作者还实验了一个前期融合方案，以允许 sequence-to-sequence 结构中的图像和文本之间的更大的交互。与 VisualBERT (</span><a href='https://arxiv.org/abs/1908.03557'><span>VisualBERT: A Simple and Performant Baseline for Vision and Language</span></a><span>) 和 multi-modal Bi-transformers (</span><a href='https://arxiv.org/abs/1909.02950'><span>Supervised Multimodal Bitransformers for Classifying Images and Text</span></a><span>) 类似，将 来自视觉输入的投影图像编码 与 来自文本输入的 token embeddings concat 起来，为每一张图分配不同的 segment embedding，并在编码器中联合编码文本和图像。编码器因此在文本和视觉上下文中实现充分的 self-attention，整个输出在 sequence-to-sequence 结构中与往常一样使用。</span></p><p>&emsp;&emsp;<span>由于得到的模型可以被视为 BlenderBot 的多模态扩展，因此作者将其称为 ”Multi-Modal BlenderBot&quot; (MMB)。</span></p><h1 id='4-训练细节'><span>4 训练细节</span></h1><p>&emsp;&emsp;<span>在训练模型时，除了线性投影到 Transformer 的输出维度外，还固定了预训练 image encoders 的权重，并 fine-tune 了 Transformer 编码器和解码器的所有权重。 </span></p><h2 id='41-领域自适应预训练-domain-adaptive-pre-training'><span>4.1 领域自适应预训练 (Domain-Adaptive Pre-Training)</span></h2><p>&emsp;&emsp;<span>在训练时，绝大多数可训练的模型权重是从一个大的 2.7B参数的 Transformer 初始化的，它仅仅根据文本输入预训练。由于最终目标是在多模态任务上实现更好的性能，作者发现对特定领域/相关领域的数据进行训练有助于使 Transformer 模型适应图像。</span></p><p>&emsp;&emsp;<span>遵循 </span><a href='https://arxiv.org/abs/2004.08744'><span>Are we pretraining it right? Digging deeper into visio-linguistic pretraining</span></a><span> ，对 COCO Captions 数据集(拥有超过 120k 个图像，每个图像都有 5 个captions，因此有超过 600k 个 utterances ) 进行预训练，模型被训练成根据图像输入来生成其描述。</span></p><p>&emsp;&emsp;<span>作者还使用 COCO Captions 进行多任务训练，并使用同样在 Reddit 训练的作为用于预训练的 Transformer 模型，看是否有必要确保模型不会偏离其处理纯文本输入的能力差太多。更多的细节参见附录 C。</span></p><h2 id='42-fine-tuning-数据集'><span>4.2 Fine-tuning 数据集</span></h2><p>&emsp;&emsp;<span>目标是在多模态对话中表现得好，因此，作者在 dialogue 和 image-dialogue 的数据集上进行 fine-tune。</span></p><p>&emsp;&emsp;<span>对于基于对话 (dialogue -based) 的数据集，考虑了和 BlenderBot (</span><a href='https://aclanthology.org/2021.eacl-main.24/'><span>Recipes for Building an Open-Domain Chatbot</span></a><span>) 相同的四个数据集：ConvAI2，EmpatheticDialogues (ED)，Wizard of Wikipedia (WoW)，BlendedSkillTalk。</span></p><p>&emsp;&emsp;<span>为了建模图像对话 (image-dialogue)，考虑了 Image-Chat 数据集。对于这 5 个数据集在 附录B 中做了简要描述，更多的信息可以在 </span><a href='https://aclanthology.org/2021.eacl-main.24/'><span>Recipes for Building an Open-Domain Chatbot</span></a><span> 中找到。</span></p><p>&emsp;&emsp;<span>在 fine-tune 阶段，考虑了两种不同的方法：一种是在 5 个数据集上一起进行多任务训练，另一种是在 Image-Chat 上单独训练。虽然后一种方法在探索模型性能上线的方法很有用，但我们的主要目标是建立一个模型，他可以展示一个有吸引力的对话者的必要技能 (同理心、个性化、知识)，同时也有能对图像做出回复并关于图像进行交流的能力。因此，我们对前者的训练设置更感兴趣。更多细节参见 附录C。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>

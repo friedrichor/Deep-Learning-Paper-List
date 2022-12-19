@@ -1,0 +1,606 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>开放型对话技术研究综述</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#0-前言">0 前言</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n9"><a class="md-toc-inner" href="#1-对话系统分类">1 对话系统分类</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n37"><a class="md-toc-inner" href="#2-开放型对话">2 开放型对话</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n43"><a class="md-toc-inner" href="#3-问题与挑战">3 问题与挑战</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n55"><a class="md-toc-inner" href="#4-从回复方式角度驱动对话技术的发展">4 从回复方式角度驱动对话技术的发展</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n56"><a class="md-toc-inner" href="#41-基于检索的方法">4.1 基于检索的方法</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n76"><a class="md-toc-inner" href="#42-基于生成的方法">4.2 基于生成的方法</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n98"><a class="md-toc-inner" href="#43-检索和生成相结合的方法">4.3 检索和生成相结合的方法</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n114"><a class="md-toc-inner" href="#5-开放型对话关键技术研究">5 开放型对话关键技术研究</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n117"><a class="md-toc-inner" href="#51-单轮对话中的回复质量优化技术">5.1 单轮对话中的回复质量优化技术</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n145"><a class="md-toc-inner" href="#52-多轮对话中的属性控制技术">5.2 多轮对话中的属性控制技术</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n170"><a class="md-toc-inner" href="#53-多轮对话中的话题延续变换控制技术">5.3 多轮对话中的话题延续变换控制技术</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n200"><a class="md-toc-inner" href="#6-多轮对话生成改进方向的相关研究">6 多轮对话生成改进方向的相关研究</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n203"><a class="md-toc-inner" href="#61-引入外部知识以提升多轮对话生成效果">6.1 引入外部知识以提升多轮对话生成效果</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n226"><a class="md-toc-inner" href="#62-引入改写机制以提升多轮对话中单句的信息量及可解释性">6.2 引入改写机制以提升多轮对话中单句的信息量及可解释性</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n234"><a class="md-toc-inner" href="#63-引入代理机制以沟通合作的思想引导多轮对话生成">6.3 引入代理机制以沟通合作的思想引导多轮对话生成</a></span></p></div><h1 id='0-前言'><span>0 前言</span></h1><p>&emsp;&emsp;<span>本文是对 综述论文 </span><a href='https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFDLAST2021&amp;filename=MESS202111001&amp;uniplatform=NZKPT&amp;v=trG_cKLIrIUA1hL-hXh968EeuRuDCVYK5_zmEY07_CeYg36xVJyrlbmOngPD9cju'><span>开放型对话技术研究综述</span></a><span> 中的部分内容进行总结，对其中引用的各参考文献提供了索引，对当前 对话系统 的发展进行总结 并 重点对开放型对话技术进行梳理。</span></p><p>&emsp;&emsp;<span>本文先从回复方式驱动的角度切入进行对话技术发展的梳理，然后介绍seq2seq 及其改良模型在对话生成场景中的应用，最后从引入外部知识、改写机制及代理机制三个角度切入，初步探索了相关技术针对多轮对话生成的可能改进方向。</span></p><p>&emsp;&emsp;<span>其中介绍各论文中的模型主要还是 seq2seq 及其改良模型，效果虽然可能不如 Transformer 等，但还是旨在提供一些未来改进的思路。</span></p><hr><h1 id='1-对话系统分类'><span>1 对话系统分类</span></h1><p><font size=5 face="楷体"><span>按照领域分类</span></font></p><ul><li><span>开放型对话：指不局限话题的聊天，即对话不存在明确的对话目的。</span></li><li><span>任务型对话：有明确的对话目的，用户明确知道自己想要让机器帮助自己完成的内容。</span></li></ul><p><span>随着小样本、无样本、无监督、自监督、迁移学习、域外检测等系列研究问题的兴起，进一步拓展了对话领域的研究视野。开放型和任务型对话的边界愈加模糊。 </span></p><p><font size=5 face="楷体"><span>按照回复方式分类</span></font></p><ul><li><span>检索式系统：使用预定义回复库根据输入和语境做出合适的回复。</span></li><li><span>生成式系统：在接收到用户输入后，采用生成模型来完成回复，这种方式不要求规模非常大和非常精准的回复语料库，但生成的回复可能会出现语法错误、语句不通顺或万能回复等问题。</span></li></ul><p><font size=5 face="楷体"><span>按照场景分类</span></font></p><ul><li><span>单轮对话：只考虑当前的用户输入并产生相应的回答，每轮问答之间相互独立，不存在关联。</span></li><li><span>多轮对话：存在问答之间的交互与依赖，能够构造上下文相关的会话过程，每轮问答之间存在一定关联性。</span></li></ul><p><font size=5 face="楷体"><span>按照对话方式分类</span></font></p><ul><li><span>主动对话：目前对于任务型对话来说，机器主导对话更容易实现，也就是机器此时是“主动的”。</span></li><li><span>被动对话：对于开放型对话来说，机器和人需要交替引导对话。因此，机器和人都应承担主动引导话题的任务。</span></li></ul><hr><h1 id='2-开放型对话'><span>2 开放型对话</span></h1><p>&emsp;&emsp;<span>开放型对话有着极大的应用价值。它已经不再是纯粹的对话目标驱动的对话，包括闲聊、推荐、信息服务等。闲聊机器人主要解决人们情感方面的需求，一般分为倾听式、反问式及交流式，各方式的特点如下：</span>
+<span>①倾听式：机器主要承担倾听者的角色。 </span>
+<span>②反问式：通过提问来推进交流的进程。</span>
+<span>③交流式：机器能够准确分析上下文语义，聊天过程一般具有一定的深度和广度。</span></p><p>&emsp;&emsp;<span>推荐和信息服务与任务型对话的技术路线相似，随着开放型对话和任务型对话的边界越来越模糊，闲聊、推荐及信息服务兼具是对话技术发展的一个大的趋势。</span></p><p>&emsp;&emsp;<span>理想的对话系统是机器与人流畅地交流并向拟人化的目标前进，能够在对话中融入聊天过程中相关的背景知识甚至情感。开放型对话没有明确的任务目标，可以用于闲聊或回答相关领域的问题，它的目的是生成有意义且相关的回复。</span></p><hr><h1 id='3-问题与挑战'><span>3 问题与挑战</span></h1><ul><li><span>语义表征：机器需要通过上下文信息更准确地理解语义，进而实现符合场景的回复。</span></li><li><span>逻辑性：机器需要在上下文聊天的过程中具有一定推理及判断的能力，实现多领域聊天的迁移和泛化。</span></li><li><span>一致性：机器需要在人机交互的过程中具备表达内容的前后一致性，这里的一致性主要包括语义一致性和逻辑一致性。</span></li><li><span>交互性：在真实的对话过程中，理想的对话情形经常是由双方共同把控的。</span></li></ul><hr><h1 id='4-从回复方式角度驱动对话技术的发展'><span>4 从回复方式角度驱动对话技术的发展</span></h1><h2 id='41-基于检索的方法'><span>4.1 基于检索的方法</span></h2><p><font size=5 face="楷体"><span>单轮检索模型的发展</span></font></p><ul><li><a href='http://staff.ustc.edu.cn/~cheneh/paper_pdf/2013/HaoWang.pdf'><span>A Dataset for Research on Short-Text Conversation</span></a><span> 比较早地关注到了回复选择，他们设计的模型的执行过程分为两步：第一步选择出评论候选列表对，第二步在候选列表中进行排序。数据标注将评论分为两类，即正例和负例。排序学习的目标是让正例的分数比负例的分数大。根据匹配模型构造一系列的匹配特征，最终的匹配得分是各个特征之间的组合。该方法为单轮检索模型的发展提供了基础研究思路。</span></li><li><a href='https://arxiv.org/abs/1503.03244v1'><span>Convolutional Neural Network Architectures for Matching Natural Language Sentences</span></a><span> 重点针对句子匹配问题进行进一步的研究与优化。首先分别对两个句子进行建模，得到两个相同且固定长度的向量来表示句子特征，然后将这两个向量作为一个多层感知机的输入，计算匹配的分数。针对两个句子在建模过程中完全独立的处理缺陷，该研究工作又对其进行了改进，提升了句子间的交互作用。</span></li></ul><p><font size=5 face="楷体"><span>多轮检索模型的发展</span></font></p><ul><li><a href='https://aclanthology.org/D16-1036/'><span>Multi-view Response Selection for Human-Computer Conversation</span></a><span>  提供了一种直接的单轮转多轮思路，将多轮问答语句合并为一列，连接处用符号隔开，从而将整个对话历史视为“一句话”去匹配下一句，通过门控制单元模块提取词汇特征，与候选回答做匹配。该方式相对“简单、直接”，但显得比较“机械”，上下文之间的逻辑关系把控性不强。</span></li><li><a href='https://arxiv.org/abs/1612.01627'><span>Sequential Matching Network: A New Architecture for Multi-turn Response Selection in Retrieval-based Chatbots</span></a><span> 认为构建问答历史语句和候选回复的交互表示是重要的特征信息，因此借鉴语义匹配矩阵以及卷积神经网络和门控制单元构造模型。通过使用卷积神经网络在多个粒度级别的上下文中对每个话语进行匹配，改善了对语义关系和上下文信息的利用，通过时间顺序累积向量模拟话语之间的关系。该方法很好地提升了多轮检索过程中上下文关联性的考量。</span></li><li><a href='https://arxiv.org/abs/1806.09102'><span>Modeling Multi-turn Conversation with Deep Utterance Aggregation</span></a><span> 提出了深度对话整合模型，主要解决多轮对话直接拼接作为上下文信息造成的噪声和冗余等问题，显著地降低了模型的时间复杂度和空间复杂度。该模型从对话和回复中采用注意力机制挖掘关键信息，凸显关键信息，忽略冗余信息，最终获得每轮对话问答的匹配得分。</span></li><li><a href='https://aclanthology.org/P18-1103/'><span>Multi-Turn Response Selection for Chatbots with Deep Attention Matching Network</span></a><span> 将自注意力机制和交叉注意力机制应用于多 轮 对 话，来提取回答和上下文的特征。首先，通过注意力机制在不同粒度上构造文本片段的表示。然后，通过上下文响应来提取真正匹配的片段。该模型可以抽取文本的更多层次、更多粒度的信息，从而得到每轮问答之间潜在的语义关联。注意力机制对于多轮检索模型的发展提供了非常重要的研究思路，在控制模型复杂度的前提下，提高了上下文的关联性。</span></li><li><a href='https://dl.acm.org/doi/pdf/10.1145/3289600.3290985'><span>Multi-Representation Fusion Network for Multi-turn Response Selection in Retrieval-based Chatbots</span></a><span> 提出了多表示融合网络，考虑与多种粒度表征形式的上下文响应匹配来进行多轮响应选择，将它们融合到一个深层的神经结构中进行匹配，并调查了多种表征各自对匹配的贡献。通过设计各个粒度之间的层次关系以减少不必要的性能浪费，进一步降低多轮检索模型的模型复杂度。</span></li></ul><h2 id='42-基于生成的方法'><span>4.2 基于生成的方法</span></h2><p><font size=5 face="楷体"><span>单轮生成模型的发展</span></font></p><ul><li><a href='https://arxiv.org/abs/1506.05869'><span>A Neural Conversational Model</span></a><span> 提出了序列到序列（Sequence to Sequence，seq2seq）的模型框架，将机器翻译的模型框架迁移到对话生成系统的研究中，基于循环神经网络的实现原理，通过记忆之前的信息来影响后面结点的输出，在单轮对话生成中取得了不错的应用效果，该模型为对话生成领域的发展提供了一个很好的思路，后续非常多的研究工作均基于该模型展开。</span></li><li><a href='https://arxiv.org/abs/1503.02364'><span>Neural Responding Machine for Short-Text Conversation</span></a><span> 提出基于短文对话的神经反应机模型，能够针对不同的回答动态选择不同位置的单词作为重要特征，最终综合全局特征生成合适的回答。在注意力机制基础上，增加了上下文信息，提升了对话生成的质量。</span></li><li><a href='https://arxiv.org/abs/1701.06547'><span>Adversarial Learning for Neural Dialogue Generation</span></a><span> 针对单轮对话生成中的万能回复问题，采用对抗学习的思想，训练生成器和判别器两个模型。生成器基于序列到序列的生成式对话模型，判别器对生成的回复进行评估，最终训练的目标是生成器生成语句无限接近于人工回复的语句，该思想为提升对话多样性提供了一个很好的思路。</span></li><li><a href='https://www.researchgate.net/profile/Zhuoran-Wang-21/publication/318882258_Neural_Response_Generation_via_GAN_with_an_Approximate_Embedding_Layer/links/59831904a6fdcca7b66e2ce1/Neural-Response-Generation-via-GAN-with-an-Approximate-Embedding-Layer.pdf'><span>Neural Response Generation via GAN with an Approximate Embedding Layer</span></a><span> 引入对抗生成网络，运用近似嵌入层来代替解码器中的采样解码结果，使整个模型连续可导，便于判别器将误差反向传播到生成器，为解决文本离散特性导致的梯度不可导问题，提供了很好的思路。</span></li></ul><p><font size=5 face="楷体"><span>多轮生成模型的发展</span></font></p><ul><li><a href='https://arxiv.org/abs/1506.06714'><span>A Neural Network Approach to Context-Sensitive Generation of Conversational Responses</span></a><span> 提出基于神经语言模型的多轮对话生成模型，使用三元组模拟多轮对话语境，在解码阶段不断地将上文的信息重新进行计算，保证每个时刻生成用到的输入信息是不同的，但又与上文息息相关。采用三元组进行模拟，目标是构建对话语境，该方法在搭建上下文联系上起到了很好的作用。</span></li><li><a href='https://arxiv.org/abs/1507.04808'><span>Building End-To-End Dialogue Systems Using Generative Hierarchical Neural Network Models</span></a><span> 提出了层次循环编码解码模型（Hierarchical Recurrent Encoder-Decoder Model，HRED）的概念，编码端 RNN 将对话映射为向量表示，而更高层次的上下文 RNN 不断迭代地追踪编码端 RNN 信息的变化。在多轮对话之后，上下文 RNN 的隐状态相当于对之前对话的总结。解码端 RNN 则根据上下文 RNN 中的信息推导生成的句子，因此生成的语句考虑了上下文信息。</span></li><li><a href='https://arxiv.org/abs/1606.00776'><span>Multiresolution Recurrent Neural Networks: An Application to Dialogue Response Generation</span></a><span> 提出了变分层次循环编码解码模型（VariableHierarchicalRecurrentEncoder-DecoderModel,VHRED，VHRED）模型。与 HRED 模型相比，这一模型多了一个隐式变量，与变分自编码器 VAE 的核心思想类似。通过利用该隐式变量，模型能够更好地追溯上下文信息，从而生成更加连贯的回复。层次化的思想对于多轮对话生成有着十分突出的作用，近些年，仍然有很多研究人员以 HRED 和 VHRED 模型作为基础模型，进行层次化模型的探索与优化。</span></li><li><a href='https://arxiv.org/abs/1606.01541'><span>Deep Reinforcement Learning for Dialogue Generation</span></a><span> 提出在多轮对话生成上使用强化学习框架，首先使用 seq2seq 模型预训练一个基础模型，然后根据作者提出的三种奖励方法来计算每次生成对话的好坏，并使用策略网络提升对话的多样性和连贯性。通过自定义的奖励方法来取代极大似然估计作为评价标准，可以使对话系统产生更好的回答。同时，强化学习思想的引入还可以起到提升多轮对话轮次的效果。强化学习思想在多轮对话上的应用仍然是一个持续的热点。</span></li></ul><h2 id='43-检索和生成相结合的方法'><span>4.3 检索和生成相结合的方法</span></h2><p><font size=5 face="楷体"><span>检索式和生成式对话各有各的优缺点</span></font></p><ul><li><span>基于检索的对话：</span>
+<span>优点：对话可控性较好，只要语料库足够大，就有可能找到信息量丰富、对用户有帮助的回答。</span>
+<span>缺点：会受限于语料库的丰富程度，而且找到的回答是相对固定的。</span></li><li><span>基于生成的对话：</span>
+<span>优点：自动生成回答，灵活性较强。</span>
+<span>缺点：容易生成一些万能回复。</span></li></ul><p><span>如果将两种模式结合起来，可以很好地吸收各自的优点，提升整体的对话质量。</span></p><p><font size=5 face="楷体"><span>检索和生成混合模型的发展</span></font></p><ul><li><a href='https://www.ijcai.org/proceedings/2018/0609.pdf'><span>An Ensemble of Retrieval-Based and Generation-Based Human-Computer Conversation Systems</span></a><span> 提出了一种检索和生成相结合的模型，包括检索、生成和重排序 3 个模块。检索模块通过现成的检索系统检索出 k 个最接近的问答对，生成模块将这 k 个问答对的回答与用户问题输入到一个端到端的生成模型来生成回答，重排序模块则对回答进行评分，选出最佳的回答。该方法构建了检索式模型和生成式模型的可能组合方式，对后续两种方式的结合研究起到了很好的启发作用。</span></li><li><a href='https://arxiv.org/abs/1809.04276'><span>Retrieval-Enhanced Adversarial Training for Neural Response Generation</span></a><span> 提出了检索增强的回复生成模型，使用检索式方法得到的候选回复来提升生成式方法的生成质量，主要引入了检索模块、生成器及判别器。检索模块在训练集中经过检索和重排序，得到最优的候选回复。生成器是一个 seq2seq 模型，它把输入的消息和上一步产生的候选回复作为输入，自动生成相应的回复。判别器本质上是一个二元分类器，用于判断一个回复是人还是机器生成的。该模型很好地将检索式和生成式方法融合在了一起，使得对话质量有较为明显的提升。</span></li></ul><hr><p><span>  </span></p><h1 id='5-开放型对话关键技术研究'><span>5 开放型对话关键技术研究</span></h1><p>&emsp;&emsp;<span>本节主要针对开放型对话发展中的若干关键技术，从一个大维度和三个小维度进行梳理。大维度紧贴单轮到多轮对话发展这条主线。三个小维度紧贴 seq2seq 模型在对话生成场景关键技术改良这条主线，具体包括单轮对话中的回复质量优化技术、多轮对话中的属性控制技术及多轮对话中的话题延续变换控制技术。</span></p><p>&emsp;&emsp;<span>多轮问答是单轮问答的功能性扩展，因此单轮问答的所有功能均包含于多轮问答中。因此，单轮对话只需重点关注回复质量的优化技术，而多轮对话则需要更多地关注属性控制技术及多轮对话中的话题延续变换控制技术。</span></p><h2 id='51-单轮对话中的回复质量优化技术'><span>5.1 单轮对话中的回复质量优化技术</span></h2><p><span>回复质量优化可以从两个方面展开：</span></p><ol start='' ><li><span>引入多样性及个性化回复：侧重于基于传统模型优化来实现回复质量的提升。</span></li><li><span>引入复制机制：侧重于解决对话过程中常常遇到的 “未登录词” 的问题。</span></li></ol><p><span>两种方法配合使用，能大大提升单轮对话中的回复质量。</span></p><p><font size=5 face="楷体"><span>引入多样性及个性化回复以解决安全回答问题</span></font></p><ul><li><span>最初的单轮对话模型较为简单，大多基于 seq2seq 及其变种模型，其中</span><strong><span>关键的问题是解决万能回复</span></strong><span>（如 “我不知道” “那很酷” 等等）。因此，</span><strong><span>多样性回复和个性化回复的相关技术在单轮对话中具有较高的适用性。</span></strong></li><li><a href='https://arxiv.org/abs/1510.03055'><span>A Diversity-Promoting Objective Function for Neural Conversation Models</span></a><span> 提出一种基于最大互信息的优化方法。传统的 seq2seq 模型倾向于生成安全、普适性的回复，因为这种回复在训练集中出现频率较高，所以按照此方式生成的概率自然也较大，而相对有意义的回复生成概率要相对小一些。通过最大互信息计算输入输出之间的依赖性和相关性，可以减少模型生成安全回复的概率，进而提升回复的多样性。该方法是提升对话多样性非常有效的方式，但存在一定的瓶颈，很难产生一些跳跃式较大且合理的回复。</span></li><li><a href='https://arxiv.org/abs/1905.12188'><span>Exploiting Persona Information for Diverse Generation of Conversational Responses</span></a><span> 提出了一种基于记忆机制的结构来建模个人信息，并结合了条件变分自编码器中的隐变量来捕捉回复中的多样性。变分自编码器通过先验网络和识别网络进行编码来获得隐变量 Z 的表示。通过采样操作可以获得不同的 Z，从而在解码器端生成不同的回复。该方法极大地提升对话过程中的多样性和个性化回复，并有能力生成一些跳跃式较大且合理的回复。</span></li><li><a href='https://arxiv.org/abs/1911.04700'><span>A Pre-training Based Personalized Dialogue Generation Model with Persona-sparse Data</span></a><span> 提出了一个新的基于预训练方法的个性化对话生成模型，通过引入一个注意力路由机制，可以在模型训练过程中更有效地利用个性化稀疏的对话数据。实验结果表明，该模型可以生成更为流畅且符合说话者个性化特征的回复，并在解码过程中控制是否在回复中展现说话者的个性化信息。该方法没有从模型角度出发，而是创新地从预训练角度切入，引入了注意力路由机制，在对话的个性化提升方面展现了更好的效果。</span></li></ul><p><font size=5 face="楷体"><span>引入复制机制以提升对话感通性</span></font></p><ul><li><strong><span>在对话生成中，未登录词通常很难通过模型自动生成。复制机制主要用来解决未登录词的问题，通过将上文的信息直接拷贝过来，从而提升对话的感通性。</span></strong><span> 例如，在人们的日常对话中会出现“你好，我叫小陈。”，然后另一方可能回答 “很高兴认识你，小陈。” 那么回答中的这个 “小陈” 就应该是在对话的过程中被 “原封不动” 地保留复制的。</span><strong><span>解决这个问题的主要难点，一是要判断输入端哪些信息是应该被 “复制” 的，二是要决定在输出端的哪个地方 “保留” 这些信息。</span></strong></li><li><a href='https://arxiv.org/abs/1603.06393'><span>Incorporating Copying Mechanism in Sequence-to-Sequence Learning</span></a><span> 率先提出了复制机制，该机制在传统模型的解码部分，做了两点改进：①在解码过程中加入复制模型，可以将未登录词直接复制过来；②将解码部分的隐状态计算变成了位置标定，可以让模型明确 “复制” 信息所在的输入端位置。该方法率先引入了复制机制，完成了传统编码解码结构的改进，有效地解决了未登录词问题，但复制形式相对机械，缺少灵活性。</span></li><li><span>与复制机制相比，</span><a href='https://arxiv.org/abs/1603.08148'><span>Pointing the Unknown Words</span></a><span> 提出的指针模型灵活性更高。该模型在传统输出层上附加了位置信息，能够表示某个词在输入端的位置。通过对输出层的选择，可以自由地完成 “复制” 或 “生成” 的切换，更加适应多轮对话实际场景的需求。与传统的复制机制相比，该模型的灵活性有了明显地提升。</span></li><li><span>在上述模型的基础上，</span><a href='https://arxiv.org/abs/1704.04368'><span>Get To The Point: Summarization with Pointer-Generator Networks</span></a><span> 进行了 seq2seq 模型和指针模型的融合，提出了指针生成网络。通过指针模型提取未登录词，在预测的每一步动态地计算不同生成概率来完成两者的融合，并设计覆盖率机制来解决 seq2seq 模型生成句子中经常出现的重复片段现象。指针生成网络在平衡复制及生成之间的关系上达到了很好的效果，通过动态地计算生成概率，与复制机制及指针模型相比，进一步提升了复制与生成的灵活性。</span></li></ul><h2 id='52-多轮对话中的属性控制技术'><span>5.2 多轮对话中的属性控制技术</span></h2><p><span>如何在对话过程中更好地承接上下文的语义信息，可以从两个方面进行解析：</span></p><ul><li><span>通过主题控制来调整聊天过程中的谈论话题，使整个对话能够围绕着不同主题展开。</span></li><li><span>通过控制生成对话句式及情感因素等属性，使得对话交流过程能够执行得更加流畅、顺利。</span></li></ul><p><font size=5 face="楷体"><span>主题控制</span></font></p><ul><li><span>主题控制大致可以分为两个思路：</span><br><span>1. 用关键词进行“显性约束”，假设关键词在生成文本中一定会出现，通过互信息进行预测，每次取与问题互信息最大的词；</span><br><span>2. 用关键词进行“隐性约束”，假设关键词在生成文本中不一定会出现，通过每一步的状态更新，利用设计的融合单元实现对主题的控制。</span>
+&emsp;&emsp;<span>基于关键词的回复生成技术，有助于 seq2seq 框架下的模型生成内容上更为相关的回复。该方法为对话生成过程中主题控制方法的研究，提供了很好的思路。</span></li><li><a href='https://arxiv.org/abs/1606.08340'><span>Topic Aware Neural Response Generation</span></a><span> 提出了将主题模型与 seq2seq 结合的方法，该模型利用主题信息作为先验知识并使用联合注意力机制及生成概率来进行对话生成。每个单词都通过联合注意力机制，由输入句子和主题信息共同影响生成，采用该方法生成的句子不仅与输入有关，而且与主题高度相关，唯一的不足就是联系上下文的能力有限，局部信息对回复的影响较大。</span></li><li><a href='https://arxiv.org/abs/1811.01063'><span>Augmenting Neural Response Generation with Context-Aware Topical Attention</span></a><span> 提出了结合了上下文信息与主题信息的端到端对话生成模型，在模型设计时考虑了上下文信息，通过句子级别和词语级别的注意力机制对上下文进行建模，再引入主题注意力机制，使生成的回复包含更多信息，提升了对话生成过程中主题控制的能力，降低了局部信息对回复的影响。</span></li></ul><p><font size=5 face="楷体"><span>控制生成对话句式及情感因素等属性</span></font></p><ul><li><span>增加文本属性信息，主要是通过对句式及情感信息捕捉来达到控制生成文本风格的目的，希望生成的回复更为可控，避免出现负面情感或疑问句式的回应。句子功能是一种重要的语言学特征，按句子功能可将语言划分为疑问句、陈述句、祈使句等多个类别，该特征在对话中能够体现说话者的目的。</span></li><li><a href='https://aclanthology.org/P18-1139.pdf'><span>Generating Informative Responses with Controlled Sentence Function</span></a><span> 引入条件变分自编码器，利用隐变量来建模和控制生成回复的功能特征。通过设计类别控制器，使得功能特征和内容信息能够在生成的回复中有机结合，提升了对话生成的属性控制能力。条件变分自编码器的应用在对话的属性控制中展现了不错的性能，也为属性控制的研究提供了基本思路，但控制的“颗粒度”不够细，控制能力有待进一步提升。</span></li><li><a href='https://arxiv.org/abs/1906.06050'><span>Neural Response Generation with Meta-Words</span></a><span> 提出使用元词（Meta-Words）来表示输入和回复间的关系，它代表了一组回复属性。其处理关键是解决回复与输入的相关性，以及如何预先定义元词的问题。为此，作者提出了一个基于目标跟踪记忆网络的生成模型，可将目前的表达和最终表达的差距传给解码器，实现对话过程实时可控。该方法为对话的属性控制提供了一个较新的思路，很好地明确了输入和回复之间的关系，从词源上优化并结合记忆网络，实现对话生成属性控制能力的提升。</span></li><li><a href='https://arxiv.org/abs/1905.11553'><span>Target-Guided Open-Domain Conversation</span></a><span> 提出将对话引向一个特定的目标，以达到对话过程可控的目的。通过定义粗粒度的词来对目标进行建模，并控制输出内容，然后通过设定规则来接近最终的对话目标。为此，设计了一个分治算法来解决流畅迁移“度”问题，以目标为导向实现对话方向的控制。该方法细化了属性控制上的“颗粒度”。与以往的模型相比，该模型进一步提升了属性控制能力。但结合元词是否能够达到更好的效果，值得进一步研究。</span></li></ul><h2 id='53-多轮对话中的话题延续变换控制技术'><span>5.3 多轮对话中的话题延续变换控制技术</span></h2><p>&emsp;&emsp;<span>话题延续和话题转换是多轮对话生成的研究关键，提升对话连贯性、学会主动对话及引入情感因素是话题延续变换控制技术研究的三大落脚点。</span></p><p><font size=5 face="楷体"><span>提升对话连贯性以促进话题自然地延续与转换</span></font></p><ul><li><span>对话连贯性是影响话题延续和转换的重要属性。如果缺乏连贯性，往往会使对话陷入逻辑混乱，造成对话无法继续。对话连贯性大致可以分为两类，即语义连贯性和逻辑连贯性：</span>
+<span>语义连贯性侧重于对话中话语之间语义上的相关性，关注句子间语义是否通顺和形式是否衔接；</span>
+<span>逻辑连贯性侧重于对话前后内容上的一致，要求逻辑不冲突。</span></li><li><a href='https://arxiv.org/abs/1611.02654'><span>Sentence Ordering and Coherence Modeling using Recurrent Neural Networks</span></a><span> 设计了一种基于 RNN 的连贯性建模和句子排序任务，利用 seq2seq 模型框架，输入一组无序的句子集合，模型在集合中顺序地选择句子并对它们进行排序以生成连贯的文本。该模型很好地实现了语义连贯性，促进话题在语义上自然地延续与转换。</span></li><li><a href='https://arxiv.org/abs/1606.01545'><span>Neural Net Models for Open-Domain Discourse Coherence</span></a><span> 提出了两种基于 encoder-decoder 模型的生成式方法，引入隐变量进行语篇生成和连贯性评估。第一个模型通过主题模型引入全局语篇信息；第二个模型使用马尔可夫模型进行隐变量的端到端训练。该模型很好地提升了语句之间的逻辑连贯性，促进话题在逻辑上自然地延续与转换。</span></li></ul><p><font size=5 face="楷体"><span>学会主动对话以提升话题转换能力</span></font></p><ul><li><span>在人机对话中，机器一般扮演被动的角色，它只需要根据人类提出的问题给出适当的回复即可。随着对话技术的发展，研究者提出机器也应该具备主动引入新信息的能力（</span><a href='https://arxiv.org/abs/1604.04358'><span>StalemateBreaker: A Proactive Content-Introducing Approach to Automatic Human-Computer Conversation</span></a><span>），以打破时而出现的对话僵局，即机器需要具有捕捉上下文关键词和引入额外线索词的能力。</span></li><li><a href='https://arxiv.org/abs/1607.00970'><span>Sequence to Backward and Forward Sequences: A Content-Introducing Approach to Generative Short-Text Conversation</span></a><span> 提出的前向后向序列模型就是以关键词为基点，将回答语句划分为两个不同方向的序列，使用双向控制机制确保关键词可以出现在目标回答语句的任意位置之中，以控制输出的流利度，进而提升主动对话的质量。该方法实现信息的双向追溯，消除了信息感知的盲区，与之前的序列到序列模型相比，极大地提升了主动对话的能力。</span></li><li><a href='https://arxiv.org/abs/1605.05110'><span>Incorporating Loose-Structured Knowledge into Conversation Modeling via Recall-Gate LSTM</span></a><span> 提出可以通过门控机制来修改神经网络的神经元，为生成的对话添加额外的线索词。这种线索词分为显性和隐性两种，显性线索词会明确地出现在回复话语中，隐性的线索词会蕴含在对话过程中。通过引入额外线索词，对主动对话起到了很好的引导作用。该方法从引入额外线索词的视角切入，通过显性及隐性线索词的提取，为话题转换能力的提升提供了很好的思路。</span></li></ul><p><font size=5 face="楷体"><span>引入情感因素以提升聊天过程中的情绪的实时感知</span></font></p><ul><li><span>很多对话系统的回复都比较单调或中性，降低了对话体验。情感的引入，可以使会话机器人能够感知、识别、理解用户的情感，并给出符合情绪的表达。对话中说话人的情绪本质上是分类问题，即从预定义好的情绪类别中，为对话中的每一句表达确定其情绪的类别。</span></li><li><a href='https://arxiv.org/abs/1704.01074'><span>Emotional Chatting Machine: Emotional Conversation Generation with Internal and External Memory</span></a><span> 设计了一个情绪化的对话生成模型，该模型可以将情绪信息引入到对话生成模型中，根据情绪类别生成相应的回复语句。该模型采用了情感表达生成的新机制，不依赖任何语言工具和定制化参数，能建模对话之间的多种情感交互，提升了对话中情绪的表达能力，从而使得生成的对话更为恰当，但该模型的情感感知能力对情绪类别的建模优劣的依赖性较大，稳定性有待进一步研究。</span></li><li><a href='https://arxiv.org/abs/1709.03968'><span>Affective Neural Response Generation</span></a><span> 提出将传统的词向量和情绪向量结合在一起，作为编码解码模型的输入。与 seq2seq 模型相比，该模型主要做了三点改进：在词嵌入上加入情感信息，优化损失函数，在集束搜索时考虑情感。该模型在传统序列到序列模型基础上，进行了比较有针对性的优化，在对话的情感感知能力上有了较大的提升。</span></li><li><a href='https://arxiv.org/abs/1711.04090'><span>MojiTalk: Generating Emotional Responses at Scale</span></a><span> 运用 Twitter 数据中的表情符号构建了一个大规模的数据集，旨在解决现有的情感数据集相对深度模型来说普遍太小且分类类别有限的问题，目标是教会机器生成有情绪的回答及控制回答的情感。该模型从数据集优化的角度切入，为提升聊天过程中的情绪感知及表达提供了另外一个研究思路。</span></li></ul><hr><h1 id='6-多轮对话生成改进方向的相关研究'><span>6 多轮对话生成改进方向的相关研究</span></h1><p>&emsp;&emsp;<span>在以往对话生成领域的研究过程中，大多数研究者倾向于选择 seq2seq 模型作为基础模型，并在此基础上进行改进和优化。这类模型在单轮对话生成上表现尚可，但对于多轮对话的应用场景来说，大多存在着实现特点与应用场景不完全匹配的问题，主要原因在于 seq2seq 模型最早应用于机器翻译问题，可以较好地适应单句翻译中的同一语义空间的对应问题。而多轮对话生成的核心是两个对话者的认知空间同步问题。</span><em><span>Toward a mechanistic psychology of dialogue</span></em><span> 从心理学角度提出了交互式对齐的模型，该模型假设随着对话的进行，对话者会自主调整他们在不同层次的语言表达，从语音到句法和语义。这种交互式对齐的过程是自动进行的，其目标是使会话双方的认知空间内容同步，从而有效地促进连贯多轮会话过程的推进。这种会话双方多层次认知空间的对齐过程，应该具有其独特的生成模型支撑。因此，本节将从 seq2seq 以及改良模型之外的角度切入，进行针对多轮对话生成改进方向的相关研究探索。</span></p><h2 id='61-引入外部知识以提升多轮对话生成效果'><span>6.1 引入外部知识以提升多轮对话生成效果</span></h2><p><font size=5 face="楷体"><span>引入知识库及知识图谱以提升聊天的深度和广度</span></font></p><ul><li><em><span>Finite-to-infinite N-best POMDP for spoken dialogue management</span></em><span> 率先将知识库引入对话系统中。在人机交互过程中，不仅要考虑用户的对话状态，还要考虑数据库的状态。</span></li><li><a href='https://aclanthology.org/C16-1318.pdf'><span>A Neural Network Approach for Knowledge-Driven Response Generation</span></a><span> 提出，在生成某句回答时，需整合过去所出现的所有对话，使之作为一种知识储备，而且每个对话者拥有属于各自的知识系统。</span></li><li><a href='https://arxiv.org/abs/1609.00777'><span>Towards End-to-End Reinforcement Learning of Dialogue Agents for Information Access</span></a><span> 提出了 KB-InfoBot ，其 使 用 数 据 库 操 作，并考虑了可导性。</span></li><li><a href='https://arxiv.org/abs/1702.01932'><span>A Knowledge-Grounded Neural Conversation Model</span></a><span> 提出，在回复时，若吸收相关的额外信息，即使给出一个在训练中没有出现过的词，也可以依赖相关的外部知识来生成一个适当的响应，从而在不用重新训练整个模型的情况下通过外部知识来丰富对话系统。</span></li><li><a href='https://www.ijcai.org/proceedings/2018/0643.pdf'><span>Commonsense Knowledge Aware Conversation Generation with Graph Attention</span></a><span> 用注意力机制把对话生成模型和大规模知识图谱技术结合起来，整个体系包括三个模块：编码解码模块、知识解释模块和知识生成模块，知识解释模块用静态注意力机制，把词向量和检索到的知识图谱结合起来；知识生成模块用动态注意力机制，根据权重变化来读取知识图谱中影响选择生成的词。该方法通过引入静态和动态注意力机制，很好地促进了对话生成模型和知识图谱的融合。</span></li><li><a href='https://aclanthology.org/P19-1081/'><span>OpenDialKG: Explainable Conversational Reasoning with Attention-based Walks over Knowledge Graphs</span></a><span> 提出了一种基于注意力机制的图解码器，通过从知识图谱中寻找有效的推理路径，将对话系统和知识图谱进行有机结合。通过零样本学习，利用之前对话语句和知识图谱的上下文，对图解码器输出的候选结果进行重新排序。图解码器的引入，优化了对话生成模型与知识图谱的结合方式，为后续两者结合研究提供了很好的思路。</span></li></ul><p>&emsp;&emsp;<span>知识图谱的引入，增强了词语之间的联系，为对话生成模型的发展起到了很好的促进作用，值得研究人员持续地研究与关注。</span></p><p><font size=5 face="楷体"><span>引入外部文档以提升知识迁移的能力</span></font></p><ul><li><span>A Document Driven Dialogue Generation Model 提出了一种文档驱动的对话生成模型，该模型以给定文档为依托进行对话生成。其核心思想是设计一种文档阅读器机制来定位与用户问题相关内容的文档，并在回答过程中运用复制机制来帮助对话的生成。该方法在对话生成的过程中更加关注对话的历史信息，不仅能够生成与文档更相关的信息响应，而且能够提升回答用户问题的质量。</span></li><li><a href='https://arxiv.org/abs/1907.08854'><span>Incremental Transformer with Deliberation Decoder for Document Grounded Conversations</span></a><span> 在有文档背景信息的多轮对话中，提出了基于翻译思想的对话生成模型。其基本思路是当多轮对话内容与一个文档集相关联时，模型的目标就是输出一个综合了文档知识的相关回复。因此，模型的输入既有多轮对话的历史，还有相关的文档集。其核心技术主要用于解决两个问题：一是挖掘文档集中与对话相关的部分，二是将多轮对话中的语句与文档集中的相关部分进行统一表示。</span></li></ul><p>&emsp;&emsp;<span>引入外部文档可以给生成模型带来很强的移植性。它不需要基于受限的外部知识，所构造的模型也不依赖于相关领域，并且获取外部知识的方式也十分便捷。在多轮对话中，可以很好地适应聊天过程中不同的话题和领域，提升对话生成的效果。</span></p><h2 id='62-引入改写机制以提升多轮对话中单句的信息量及可解释性'><span>6.2 引入改写机制以提升多轮对话中单句的信息量及可解释性</span></h2><p>&emsp;&emsp;<span>多轮对话是一个相对复杂的场景，需要克服多轮会话的指代消解和信息省略造成单句的信息量及可解释性下降问题，通过改写机制可以在一定程度上缓解或解决这些问题。</span></p><ul><li><a href='https://arxiv.org/abs/1906.07004'><span>Improving Multi-turn Dialogue Modelling with Utterance ReWriter</span></a><span> 通过语句改写来解决多轮对话中信息省略和引用的问题。通常来说，在多轮对话中，后面的句子会和前面的句子存在部分指代的关系，因此后面的句子经常会省略前面句子的部分信息，使得机器很难去理解对话的真实意图。因此，作者通过构建一个模型来生成补全信息后的句子，以解决指代消解或者信息省略带来的问题。</span></li><li><a href='https://arxiv.org/abs/1910.08282'><span>Unsupervised Context Rewriting for Open Domain Conversation</span></a><span> 提出利用改写的方法来帮助对上下文进行建模，将多轮对话输入改写为单轮对话输入，使用多轮对话中的上下文信息来改写最后一轮的句子，在压缩了上下文信息的同时，也保留了有用的信息。</span></li></ul><p>&emsp;&emsp;<span>改写机制为多轮对话生成研究提供了一个很好的操作和处理思路，其最大的贡献就是提升了单句的信息量及可解释性，为模型提供了相对丰富的信息支持，进而提升了多轮对话的生成质量。</span></p><h2 id='63-引入代理机制以沟通合作的思想引导多轮对话生成'><span>6.3 引入代理机制以沟通合作的思想引导多轮对话生成</span></h2><p>&emsp;&emsp;<span>从本质上说，多轮对话是一个会话者沟通合作的场景，而代理机制可以很好地将多轮对话进行拆分，并且实现各个拆分部分的信息传递，形成代理之间的沟通与合作。</span></p><ul><li><a href='https://arxiv.org/abs/1704.07130'><span>Learning Symmetric Collaborative Dialogue Agents with Dynamic Knowledge Graph Embeddings</span></a><span> 设定了两个代理场景，假定每个代理拥有自己的结构化知识库，但会话双方也有一些知识上的交集，要通过沟通对话来一起找出共同的那部分。这里的处理难点在于如何将非结构化的对话和结构化的知识结合。作者将对话的状态用一个动态知识图谱表示，然后基于知识图谱生成回复来推动对话的进行。其核心是利用信息传递实现对话上下文的更新，这种思路和多轮对话的场景十分契合。</span></li><li><a href='https://arxiv.org/abs/1803.10357'><span>Deep Communicating Agents for Abstractive Summarization</span></a><span> 提出的多代理机制的核心思想是将长文本拆分为若干个部分，每个部分由一个代理来处理，同时代理之间还会互相进行信息的传递，通过每个代理内部与代理之间的注意力机制综合得到的结果，输入到解码器中，最终得到输出单词在词典上的概率分布。虽然每个代理只负责一个部分，但在编码理解的过程中，如果不能把握全局信息，就很难正确地理解各自部分中真正重要的信息。所以，只有通过多个代理之间相互沟通和合作，才能更好地完成整体的工作。多轮对话生成可以理解为多个问答对的有机融合，并且不同轮次的问答对之间存在着紧密的联系，这与多代理机制的思想十分吻合，每个问答对相当于由一个代理负责，通过不同代理之间的沟通合作，共同引导多轮对话生成。</span></li></ul><p>&emsp;&emsp;<span>沟通合作最重要的就是信息传递。无论是动态知识图谱还是层次化注意力机制，都在很大程度上提升了代理之间传递信息的能力，进而提升了代理之间的沟通与合作。与传统序列到序列对话生成的思想相比，沟通合作的思想更加符合多轮对话的应用场景，应该可以以沟通合作的思想作为切入点，进一步思考开放型多轮对话的生成。</span></p></div></div>
+</body>
+</html>
