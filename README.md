@@ -79,11 +79,11 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 |paper|源码|收录|简介|笔记|讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|||||||
-|||||||
-|||||||
-|||||||
-|||||||
+| [DIALOGPT : Large-Scale Generative Pre-training for Conversational Response Generation](https://aclanthology.org/2020.acl-demos.30/) |        [code](https://github.com/microsoft/DialoGPT)         |   ACL 2020   | **DialoGPT** |  -   |  -   |
+| [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer](https://jmlr.org/papers/v21/20-074.html) | [code](https://github.com/google-research/text-to-text-transfer-transformer) |  JMLR 2020   |    **T5**    |  -   |  -   |
+| [Language Models are Few-Shot Learners](https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html) |                              -                               | NeurIPS 2020 |  **GPT-3**   |  -   |  -   |
+| [Recipes for Building an Open-Domain Chatbot](https://aclanthology.org/2021.eacl-main.24/) |                              -                               |  EACL 2021   | **Blender**  |  -   |  -   |
+| [Towards a Human-like Open-Domain Chatbot](https://arxiv.org/abs/2001.09977) | [code](https://github.com/google-research/google-research/tree/master/meena/) |     2020     |  **Menna**   |  -   |  -   |
 
 
 # CV
