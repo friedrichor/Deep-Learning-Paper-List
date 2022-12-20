@@ -23,7 +23,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 |paper|源码|收录|简介|笔记|讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|[ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision](http://proceedings.mlr.press/v139/kim21k.html)|[code](https://github.com/dandelin/vilt)|ICML 2021|**ViLT**; 视觉和语言预训练 (Vision-and-Language Pre-training, VLP) 提高了各种视觉和语言联合下游任务的性能，作者提出了很小的 VLP 模型|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/)|[视频](https://www.bilibili.com/video/BV14r4y1j74y/)|
+|[ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision](http://proceedings.mlr.press/v139/kim21k.html)|[code](https://github.com/dandelin/vilt)|ICML 2021|**ViLT**; 视觉和语言预训练 (Vision-and-Language Pre-training, VLP) 提高了各种视觉和语言联合下游任务的性能，作者提出了很小的 VLP 模型|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/ViLT.html)|[视频](https://www.bilibili.com/video/BV14r4y1j74y/)|
 |[Learning Transferable Visual Models From Natural Language Supervision]()|[code](https://github.com/OpenAI/CLIP)|ICML 2021|**CLIP**; 对比学习; Zero-shot; Prompt; 迁移能力很强，仅仅 zero-shot 就能和有监督训练的模型打成平手|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/CLIP.html)|[视频](https://www.bilibili.com/video/BV1SL4y1s7LQ/)|
 
 ### 多模态对话
