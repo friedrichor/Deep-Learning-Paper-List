@@ -41,9 +41,9 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 |[Taming Transformers for High-Resolution Image Synthesis](https://openaccess.thecvf.com/content/CVPR2021/html/Esser_Taming_Transformers_for_High-Resolution_Image_Synthesis_CVPR_2021_paper.html)|[code](https://github.com/CompVis/taming-transformers)|CVPR 2021|**VQGAN**|-|-|
 |[Zero-Shot Text-to-Image Generation](http://proceedings.mlr.press/v139/ramesh21a.html)|[code](https://github.com/openai/DALL-E)|ICML 2021|**DALL-E**|-|-|
 |[CogView: Mastering Text-to-Image Generation via Transformers](https://proceedings.neurips.cc/paper/2021/hash/a4d92e2cd541fca87e4620aba658316d-Abstract.html)|[code](https://github.com/THUDM/CogView)|NeurIPS 2021|**CogView**; Transformer 和 VQ-VAE 相结合的生成模型|-|-|
-|[NÜWA: Visual Synthesis Pre-training for Neural visUal World creAtion](https://arxiv.org/abs/2111.12417)|[code](https://github.com/microsoft/NUWA)|ECCV 2022|**NÜWA**|-|-|
+|[NÜWA: Visual Synthesis Pre-training for Neural visUal World creAtion](https://arxiv.org/abs/2111.12417)|[code](https://github.com/microsoft/NUWA)|ECCV 2022|**NÜWA**; 不仅可以生成图像，还可以生成较短的视频|-|-|
 |[GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models](https://proceedings.mlr.press/v162/nichol22a.html)|[code](https://github.com/openai/glide-text2im)|ICML 2022|**GLIDE**; 扩散模型; 生成高质量逼真图像|-|-|
-|[Hierarchical Text-Conditional Image Generation with CLIP Latents](https://arxiv.org/abs/2204.06125)|-|2022|**DALL-E 2**; 扩散模型; 结合 CLIP 和 GLIDE，相比于DALL-E 和GLIDE，具有更好的多样性，且计算效率更高|-|[视频](https://www.bilibili.com/video/BV17r4y1u77B/)|
+|[Hierarchical Text-Conditional Image Generation with CLIP Latents](https://arxiv.org/abs/2204.06125)|-|2022|**DALL-E 2**; 扩散模型; 结合 CLIP 和 GLIDE，相比于 DALL-E 和 GLIDE，具有更好的多样性，且计算效率更高|-|[视频](https://www.bilibili.com/video/BV17r4y1u77B/)|
 |[Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding](https://arxiv.org/abs/2205.11487)|-|2022|**Imagen**; 扩散模型; 与 DALL-E 2 类似，但性能更强|-|-|
 |[High-Resolution Image Synthesis with Latent Diffusion Models](https://ieeexplore.ieee.org/document/9878449)|[code](https://github.com/CompVis/latent-diffusion)|CVPR 2022|**LDMs**; 扩散模型|-|-|
 
