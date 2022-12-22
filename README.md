@@ -18,7 +18,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 |:-:|:-:|:-:|:-:|:-:|
 | [Image-Chat: Engaging Grounded Conversations](https://aclanthology.org/2020.acl-main.219/) |  -   |ACL 2020|Image-Chat|-|
 |[PhotoChat: A Human-Human Dialogue Dataset With Photo Sharing Behavior For Joint Image-Text Modeling](https://aclanthology.org/2021.acl-long.479/)|  -   |ACL/IJCNLP 2021|**PhotoChat**; 提出两个任务: 分享图片意图预测, 图像检索|-|
-
+|[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|正在写|
 
 ### 多模态经典模型
 
@@ -91,7 +91,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 |paper|源码|收录|简介|笔记|讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |  -   |  -   |
+| [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |正在写|  -   |
 
 
 # CV
