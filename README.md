@@ -116,3 +116,6 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 
 # 会议、论坛总结
 
+|会议/论坛|子题目|笔记|
+|:-:|:-:|:-:|
+| CCL 2022 | 自然语言处理国际前沿动态综述——开放域对话生成前言综述 | [笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/会议、论坛总结/CCL2022%20自然语言处理国际前沿动态综述——开放域对话生成前言综述.html) |
