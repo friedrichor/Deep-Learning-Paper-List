@@ -1,5 +1,5 @@
 # Paper-List
-List of deep learning papers, including CV (Computer Vision), NLP (Natural language processing), Multimodal and other research directions.
+List of deep learning papers, including CV (Computer Vision), NLP (Natural Language Processing), Multimodal and other research directions.
 
 备注：表格中“简介”一列中加粗的部分为该论文中提出的模型名称。
 
@@ -91,7 +91,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural langu
 
 |paper|源码|收录|简介|笔记|讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |正在写|  -   |
+| [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/NLP/文本分类/Towards%20Unified%20Prompt%20Tuning%20for%20Few-shot%20Text%20Classification.html)|  -   |
 
 
 # CV
