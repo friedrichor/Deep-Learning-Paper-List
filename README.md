@@ -1,7 +1,7 @@
 # Deep-Learning-Paper-List
 List of deep learning papers, including CV (Computer Vision), NLP (Natural Language Processing), Multimodal and other research directions.
 
-备注：表格中“简介”一列中加粗的部分为该论文中提出的模型名称。
+备注：表格中“简介”一列中加粗的部分为该论文中提出的 模型/数据集 名称。
 
 # 多模态
 
