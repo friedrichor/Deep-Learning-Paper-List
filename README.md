@@ -11,6 +11,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[Multimodal Machine Learning: A Survey and Taxonomy](https://ieeexplore.ieee.org/document/8269806)|-|IEEE 2019|-|-|-|
 |[Multimodal Learning with Transformers: A Survey](https://arxiv.org/abs/2206.06488)|-|2022|-|-|-|
+|[Multimodal Deep Learning](https://arxiv.org/abs/2301.04856)|-|2023|多模态综述，此外也写了很多NLP和CV方向的SOTA模型。本文是一次研讨会的结果，全文239页，对多模态的一些领域的数据集、模型、Limitations等做了较详细的介绍和总结|-|-|
 
 ### 多模态数据集
 
