@@ -7,11 +7,13 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 
 ### 多模态综述
 
-|paper|源码|收录|简介|笔记|讲解|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|[Multimodal Machine Learning: A Survey and Taxonomy](https://ieeexplore.ieee.org/document/8269806)|-|IEEE 2019|-|-|-|
-|[Multimodal Learning with Transformers: A Survey](https://arxiv.org/abs/2206.06488)|-|2022|-|-|-|
-|[Multimodal Deep Learning](https://arxiv.org/abs/2301.04856)|-|arxiv 2023|多模态综述。文中首先对NLP和CV方向的SOTA模型进行回顾，然后对多模态领域进行了详细的总结。本文是一次研讨会的结果，全文239页，对多模态的一些任务的数据集、模型、评价指标等做了较详细的介绍和总结|-|-|
+|paper|源码|收录|简介|笔记|
+|:-:|:-:|:-:|:-:|:-:|
+|[Multimodal Machine Learning: A Survey and Taxonomy](https://ieeexplore.ieee.org/document/8269806)|-|IEEE 2019|-|-|
+|[Multimodal Learning with Transformers: A Survey](https://arxiv.org/abs/2206.06488)|-|2022|-|-|
+|[Multimodal Deep Learning](https://arxiv.org/abs/2301.04856)|-|arxiv 2023|多模态综述。文中首先对NLP和CV方向的SOTA模型进行回顾，然后对多模态领域进行了详细的总结。本文是一次研讨会的结果，全文239页，对多模态的一些任务的数据集、模型、评价指标等做了较详细的介绍和总结|-|
+|[Diffusion Models: A Comprehensive Survey of Methods and Applications](https://arxiv.org/abs/2209.00796)|-|arxiv 2022|Diffusion Model 综述。北大、谷歌等联合提出。|-|
+|[Understanding Deep Learning]([https://arxiv.org/abs/2209.00796](https://udlbook.github.io/udlbook/))|-|2023|深度学习综述。麻省理工出版。全面详细，也适合深度学习入门。|-|
 
 ### 多模态数据集
 
