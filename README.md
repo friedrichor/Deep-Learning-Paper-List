@@ -21,7 +21,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |:-:|:-:|:-:|:-:|:-:|
 | [Image-Chat: Engaging Grounded Conversations](https://aclanthology.org/2020.acl-main.219/) |  -   |ACL 2020|**Image-Chat**; 多模态对话数据集|-|
 |[PhotoChat: A Human-Human Dialogue Dataset With Photo Sharing Behavior For Joint Image-Text Modeling](https://aclanthology.org/2021.acl-long.479/)|  -   |ACL/IJCNLP 2021|**PhotoChat**; 多模态对话数据集; 提出两个任务: 分享图片意图预测, 图像检索|-|
-|[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|准备写|
+|[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/MMDialog.html)|
 
 ### 多模态经典模型
 
@@ -37,7 +37,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[Learning to Respond with Stickers: A Framework of Unifying Multi-Modality in Multi-Turn Dialog](https://arxiv.org/abs/2003.04679)|[code](https://github.com/gsh199449/stickerchat)|WWW 2020|open-domain; 检索式; 可回复出表情包|-|
 |[Towards Expressive Communication with Internet Memes: A New Multimodal Conversation Dataset and Benchmark](https://arxiv.org/abs/2109.01839)|[code](https://github.com/lizekang/DSTC10-MOD)|-|open-domain; 检索式; 可回复出表情包|-|
 |[Multimodal Dialogue Response Generation](https://aclanthology.org/2022.acl-long.204/)|[code](https://aclanthology.org/2022.acl-long.204/)|ACL 2022|**Divter**; open-domain; 生成式; 可生成图像|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/Multimodal%20Dialogue%20Response%20Generation.html)|
-|[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|准备写|
+|[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/MMDialog.html)|
 
 ### Text-to-Image
 
