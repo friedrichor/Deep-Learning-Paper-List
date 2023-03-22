@@ -40,7 +40,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[Towards Expressive Communication with Internet Memes: A New Multimodal Conversation Dataset and Benchmark](https://arxiv.org/abs/2109.01839)|[code](https://github.com/lizekang/DSTC10-MOD)|-|open-domain; 检索式; 可回复出表情包|-|
 |[Multimodal Dialogue Response Generation](https://aclanthology.org/2022.acl-long.204/)|[code](https://aclanthology.org/2022.acl-long.204/)|ACL 2022|**Divter**; open-domain; 生成式; 可生成图像|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/Multimodal%20Dialogue%20Response%20Generation.html)|
 |[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/MMDialog.html)|
-|[Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models](https://arxiv.org/abs/2303.04671)|[code](https://github.com/microsoft/visual-chatgpt)|arxiv 2023|**Visual ChatGPT**;在 ChatGPT 的基础上加了很多目前SOTA的多模态模型(包括 Text2Image、Image2Text等等)，并提出了一些解决方案使 ChatGPT 能够和这些多模态模型相融合，使其能够较好地处理多模态任务|-|
+|[Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models](https://arxiv.org/abs/2303.04671)|[code](https://github.com/microsoft/visual-chatgpt)|arxiv 2023|**Visual ChatGPT**;在 ChatGPT 的基础上加了很多目前SOTA的多模态模型(包括 Text2Image、Image2Text等等)，并提出了一些解决方案使 ChatGPT 能够和这些多模态模型相融合|-|
 
 
 ### Text-to-Image
@@ -54,7 +54,8 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models](https://proceedings.mlr.press/v162/nichol22a.html)|[code](https://github.com/openai/glide-text2im)|ICML 2022|**GLIDE**; 扩散模型; 生成高质量逼真图像|-|-|
 |[Hierarchical Text-Conditional Image Generation with CLIP Latents](https://arxiv.org/abs/2204.06125)|-|2022|**DALL-E 2**; 扩散模型; 结合 CLIP 和 GLIDE，相比于 DALL-E 和 GLIDE，具有更好的多样性，且计算效率更高|-|[视频](https://www.bilibili.com/video/BV17r4y1u77B/)|
 |[Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding](https://arxiv.org/abs/2205.11487)|-|2022|**Imagen**; 扩散模型; 与 DALL-E 2 类似，但性能更强|-|-|
-|[High-Resolution Image Synthesis with Latent Diffusion Models](https://ieeexplore.ieee.org/document/9878449)|[code](https://github.com/CompVis/latent-diffusion)|CVPR 2022|**Stable Diffusion(LDMs)**; 扩散模型|-|-|
+|[High-Resolution Image Synthesis with Latent Diffusion Models](https://ieeexplore.ieee.org/document/9878449)|[code](https://github.com/CompVis/latent-diffusion)|CVPR 2022|**LDMs(Stable Diffusion)**; 扩散模型|-|-|
+|[DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)|-|arxiv 2022|**Dreambooth**; 一种个性化 text2image 模型的方法，例如给出一个物体/人物等的几张（3~5张）图像就能够 fine-tune Stable Diffusion，使模型能够“学会”这个物体，从而在后续的生成时能够更加准确地生成这个物体/人物。|-|-|
 
 ### 多模态情感分析
 
