@@ -22,6 +22,8 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 | [Image-Chat: Engaging Grounded Conversations](https://aclanthology.org/2020.acl-main.219/) |  -   |ACL 2020|**Image-Chat**; 多模态对话数据集|-|
 |[PhotoChat: A Human-Human Dialogue Dataset With Photo Sharing Behavior For Joint Image-Text Modeling](https://aclanthology.org/2021.acl-long.479/)|  -   |ACL/IJCNLP 2021|**PhotoChat**; 多模态对话数据集; 提出两个任务: 分享图片意图预测, 图像检索|-|
 |[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/MMDialog.html)|
+|[TikTalk: A Multi-Modal Dialogue Dataset for Real-World Chitchat]([https://arxiv.org/abs/2211.05719](https://arxiv.org/abs/2301.05880)-)|[code](https://github.com/RUC-AIMind/TikTalk)|2023|**TikTalk**；多模态对话数据集；里面同时总结了以往的多模态对话数据集|-|
+
 
 ### 多模态经典模型
 
