@@ -21,8 +21,8 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |:-:|:-:|:-:|:-:|:-:|
 | [Image-Chat: Engaging Grounded Conversations](https://aclanthology.org/2020.acl-main.219/) |  -   |ACL 2020|**Image-Chat**; 多模态对话数据集|-|
 |[PhotoChat: A Human-Human Dialogue Dataset With Photo Sharing Behavior For Joint Image-Text Modeling](https://aclanthology.org/2021.acl-long.479/)|  -   |ACL/IJCNLP 2021|**PhotoChat**; 多模态对话数据集; 提出两个任务: 分享图片意图预测, 图像检索|-|
-|[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/MMDialog.html)|
-|[TikTalk: A Multi-Modal Dialogue Dataset for Real-World Chitchat]([https://arxiv.org/abs/2211.05719](https://arxiv.org/abs/2301.05880)-)|[code](https://github.com/RUC-AIMind/TikTalk)|arxiv 2023|**TikTalk**; 多模态对话数据集; 里面同时总结了以往的多模态对话数据集|-|
+|[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|arxiv 2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/MMDialog.html)|
+|[TikTalk: A Multi-Modal Dialogue Dataset for Real-World Chitchat](https://arxiv.org/abs/2301.05880)|[code](https://github.com/RUC-AIMind/TikTalk)|arxiv 2023|**TikTalk**; 多模态对话数据集; 里面同时总结了以往的多模态对话数据集|-|
 
 
 ### 多模态经典模型
@@ -55,7 +55,10 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[Hierarchical Text-Conditional Image Generation with CLIP Latents](https://arxiv.org/abs/2204.06125)|-|2022|**DALL-E 2**; 扩散模型; 结合 CLIP 和 GLIDE，相比于 DALL-E 和 GLIDE，具有更好的多样性，且计算效率更高|-|[视频](https://www.bilibili.com/video/BV17r4y1u77B/)|
 |[Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding](https://arxiv.org/abs/2205.11487)|-|2022|**Imagen**; 扩散模型; 与 DALL-E 2 类似，但性能更强|-|-|
 |[High-Resolution Image Synthesis with Latent Diffusion Models](https://ieeexplore.ieee.org/document/9878449)|[code](https://github.com/CompVis/latent-diffusion)|CVPR 2022|**LDMs(Stable Diffusion)**; 扩散模型|-|-|
-|[DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)|-|arxiv 2022|**Dreambooth**; 一种个性化 text2image 模型的方法，例如给出一个物体/人物等的几张（3~5张）图像就能够 fine-tune Stable Diffusion，使模型能够“学会”这个物体，从而在后续的生成时能够更加准确地生成这个物体/人物。|-|-|
+|[DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation](https://arxiv.org/abs/2208.12242)|-|arxiv 2022|**DreamBooth**；个性化Stable Diffusion，仅仅需要一个对象的几张图片（3-5张）来fine-tune预训练好的Diffusion Model，就能够将这个对象和唯一的标识符绑定在一起|-|-|
+|[InstructPix2Pix: Learning to Follow Image Editing Instructions](https://arxiv.org/abs/2211.09800)|-|arxiv 2022|**InstructPix2Pix**；根据人工指令编辑图像，可以按照人类的指令来替换图像中的对象或更改图像的风格等|-|-|
+|[Adding Conditional Control to Text-to-Image Diffusion Models]()|-|arxiv 2023|**ControlNet**；可以利用边缘图、分割图、关键点等作为条件输入，实现对原图像进行重绘|-|-|
+|[Aligning Text-to-Image Models using Human Feedback](https://arxiv.org/abs/2302.12192)|-|arxiv 2023|使用HF(Human Feedback)的方法|-|-|
 
 ### 多模态情感分析
 
