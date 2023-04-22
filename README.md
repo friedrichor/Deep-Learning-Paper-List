@@ -2,7 +2,7 @@
 List of deep learning papers, including CV (Computer Vision), NLP (Natural Language Processing), Multimodal and other research directions.
 
 备注：表格中“简介”一列中加粗的部分为该论文中提出的 模型/数据集 名称。
-- [Deep-Learning-Paper-List](#deep-learning-paper-list)
+
 - [多模态](#多模态)
     - [多模态综述](#多模态综述)
     - [经典模型](#经典模型)
@@ -16,7 +16,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
     - [对话](#对话)
     - [文本分类](#文本分类)
     - [Prompt tuning](#prompt-tuning)
-    - [Instruction finetuning](#instruction-finetuning)
+    - [Instruction finetuning(Flan)](#instruction-finetuningflan)
 - [CV](#cv)
     - [图像分类](#图像分类)
     - [目标检测](#目标检测)
@@ -133,7 +133,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 | [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/NLP/文本分类/Towards%20Unified%20Prompt%20Tuning%20for%20Few-shot%20Text%20Classification.html)|  -   |
 
 
-### Instruction finetuning
+### Instruction finetuning(Flan)
 |paper|源码|收录|简介|笔记|参考资料|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[Scaling Instruction-Finetuned Language Models](https://arxiv.org/abs/2210.11416)|[code(t5x)](https://github.com/google-research/t5x)|arXiv 2022|**Flan-T5,Flan-PaLM**|-|[知乎](https://zhuanlan.zhihu.com/p/580468546)|
