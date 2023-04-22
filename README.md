@@ -2,6 +2,25 @@
 List of deep learning papers, including CV (Computer Vision), NLP (Natural Language Processing), Multimodal and other research directions.
 
 备注：表格中“简介”一列中加粗的部分为该论文中提出的 模型/数据集 名称。
+- [Deep-Learning-Paper-List](#deep-learning-paper-list)
+- [多模态](#多模态)
+    - [多模态综述](#多模态综述)
+    - [经典模型](#经典模型)
+    - [多模态对话数据集](#多模态对话数据集)
+    - [多模态对话](#多模态对话)
+    - [Text-to-Image](#text-to-image)
+    - [多模态情感分析](#多模态情感分析)
+    - [视频领域](#视频领域)
+- [NLP](#nlp)
+    - [经典模型](#经典模型-1)
+    - [对话](#对话)
+    - [文本分类](#文本分类)
+    - [Prompt tuning](#prompt-tuning)
+    - [Instruction finetuning](#instruction-finetuning)
+- [CV](#cv)
+    - [图像分类](#图像分类)
+    - [目标检测](#目标检测)
+- [会议、论坛总结](#会议论坛总结)
 
 # 多模态
 
@@ -15,7 +34,16 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[Diffusion Models: A Comprehensive Survey of Methods and Applications](https://arxiv.org/abs/2209.00796)|-|arxiv 2022|Diffusion Model 综述（书）。北大、谷歌等联合提出。|-|
 |[Understanding Deep Learning](https://udlbook.github.io/udlbook/)|-|2023|深度学习综述（书）。麻省理工出版。全面详细，也适合深度学习入门。|-|
 
-### 多模态数据集
+
+### 经典模型
+
+|paper|源码|收录|简介|笔记|讲解|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|[ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision](http://proceedings.mlr.press/v139/kim21k.html)|[code](https://github.com/dandelin/vilt)|ICML 2021|**ViLT**; 视觉和语言预训练 (Vision-and-Language Pre-training, VLP) 提高了各种视觉和语言联合下游任务的性能，作者提出了很小的 VLP 模型|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/ViLT：Vision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision.html)|[视频](https://www.bilibili.com/video/BV14r4y1j74y/)|
+|[Learning Transferable Visual Models From Natural Language Supervision]()|[code](https://github.com/OpenAI/CLIP)|ICML 2021|**CLIP**; 对比学习; Zero-shot; Prompt; 迁移能力很强，仅仅 zero-shot 就能和有监督训练的模型打成平手|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/CLIP.html)|[视频](https://www.bilibili.com/video/BV1SL4y1s7LQ/)|
+
+
+### 多模态对话数据集
 
 |paper|源码|收录|简介|笔记|
 |:-:|:-:|:-:|:-:|:-:|
@@ -24,13 +52,6 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[MMDialog: A Large-scale Multi-turn Dialogue Dataset Towards Multi-modal Open-domain Conversation](https://arxiv.org/abs/2211.05719)|[code](https://github.com/victorsungo/MMDialog)|arxiv 2022|**MMDialog**; 大规模多模态对话数据集，相比于 PhotoChat 大了很多; 意图预测(文本/图像/停止); 检索式、生成式|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态对话/MMDialog.html)|
 |[TikTalk: A Multi-Modal Dialogue Dataset for Real-World Chitchat](https://arxiv.org/abs/2301.05880)|[code](https://github.com/RUC-AIMind/TikTalk)|arxiv 2023|**TikTalk**; 多模态对话数据集; 里面同时总结了以往的多模态对话数据集|-|
 
-
-### 多模态经典模型
-
-|paper|源码|收录|简介|笔记|讲解|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|[ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision](http://proceedings.mlr.press/v139/kim21k.html)|[code](https://github.com/dandelin/vilt)|ICML 2021|**ViLT**; 视觉和语言预训练 (Vision-and-Language Pre-training, VLP) 提高了各种视觉和语言联合下游任务的性能，作者提出了很小的 VLP 模型|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/ViLT：Vision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision.html)|[视频](https://www.bilibili.com/video/BV14r4y1j74y/)|
-|[Learning Transferable Visual Models From Natural Language Supervision]()|[code](https://github.com/OpenAI/CLIP)|ICML 2021|**CLIP**; 对比学习; Zero-shot; Prompt; 迁移能力很强，仅仅 zero-shot 就能和有监督训练的模型打成平手|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/CLIP.html)|[视频](https://www.bilibili.com/video/BV1SL4y1s7LQ/)|
 
 ### 多模态对话
 
@@ -77,7 +98,6 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[Two-Stream Convolutional Networks for Action Recognition in Videos](https://proceedings.neurips.cc/paper/2014/hash/00ec53c4682d36f5c4359f4ae7bd7ba1-Abstract.html)|  -   | NIPS 2014 |               视频领域中应用深度学习的开山之作               | [笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/视频领域/Two-Stream%20Convolutional%20Networks%20for%20Action%20Recognition%20in%20Videos.html) |[视频](https://www.bilibili.com/video/BV1mq4y1x7RU/)|
 |[VideoBERT: A Joint Model for Video and Language Representation Learning](https://ieeexplore.ieee.org/document/9009570)|-|ICCV 2019|**VideoBERT**; 对动作分类任务直接进行 zero-shot 推理时，就能与先前的有监督训练好的 S3D 取得差不多的效果|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/视频领域/VideoBERT：A%20Joint%20Model%20for%20Video%20and%20Language%20Representation%20Learning.html)|-|
 
-
 # NLP
 
 ### 经典模型
@@ -98,12 +118,25 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 | [Recipes for Building an Open-Domain Chatbot](https://aclanthology.org/2021.eacl-main.24/) |                              -                               |  EACL 2021   | **Blender**  |  -   |  -   |
 | [Towards a Human-like Open-Domain Chatbot](https://arxiv.org/abs/2001.09977) | [code](https://github.com/google-research/google-research/tree/master/meena/) |     2020     |  **Menna**   |  -   |  -   |
 
+
 ### 文本分类
 
 |paper|源码|收录|简介|笔记|讲解|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/NLP/文本分类/Towards%20Unified%20Prompt%20Tuning%20for%20Few-shot%20Text%20Classification.html)|  -   |
 
+
+### Prompt tuning
+
+|paper|源码|收录|简介|笔记|讲解|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/NLP/文本分类/Towards%20Unified%20Prompt%20Tuning%20for%20Few-shot%20Text%20Classification.html)|  -   |
+
+
+### Instruction finetuning
+|paper|源码|收录|简介|笔记|参考资料|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|[Scaling Instruction-Finetuned Language Models](https://arxiv.org/abs/2210.11416)|[code(t5x)](https://github.com/google-research/t5x)|arXiv 2022|**Flan-T5,Flan-PaLM**|-|[知乎](https://zhuanlan.zhihu.com/p/580468546)|
 
 # CV
 
