@@ -48,6 +48,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 
 |paper|github|收录&作者|简介|笔记|
 |:-:|:-:|:-:|:-:|:-:|
+|[MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models](https://arxiv.org/abs/2304.10592)|[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)|arXiv 2023|**MiniGPT-4**; 可以理解图像的LLM; 模型结构与 BLIP-2 类似|-|
 |[SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities](https://arxiv.org/abs/2305.11000)|[SpeechGPT](https://github.com/0nutation/SpeechGPT)|arXiv 2023<br>复旦|**SpeechGPT**; 既能理解音频又能生成音频的LLM|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/LLM/SpeechGPT.html)|
 
 ### 多模态对话数据集
