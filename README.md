@@ -6,6 +6,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 - [多模态](#多模态)
     - [多模态综述](#多模态综述)
     - [经典模型](#经典模型)
+    - [多模态LLM](#多模态llm)
     - [多模态对话数据集](#多模态对话数据集)
     - [多模态对话](#多模态对话)
     - [Text-to-Image](#text-to-image)
@@ -42,6 +43,12 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision](http://proceedings.mlr.press/v139/kim21k.html)|[code](https://github.com/dandelin/vilt)|ICML 2021|**ViLT**; 视觉和语言预训练 (Vision-and-Language Pre-training, VLP) 提高了各种视觉和语言联合下游任务的性能，作者提出了很小的 VLP 模型|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/ViLT：Vision-and-Language%20Transformer%20Without%20Convolution%20or%20Region%20Supervision.html)|[视频](https://www.bilibili.com/video/BV14r4y1j74y/)|
 |[Learning Transferable Visual Models From Natural Language Supervision]()|[code](https://github.com/OpenAI/CLIP)|ICML 2021|**CLIP**; 对比学习; Zero-shot; Prompt; 迁移能力很强，仅仅 zero-shot 就能和有监督训练的模型打成平手|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/CLIP.html)|[视频](https://www.bilibili.com/video/BV1SL4y1s7LQ/)|
 
+
+### 多模态LLM
+
+|paper|github|收录&作者|简介|笔记|
+|:-:|:-:|:-:|:-:|:-:|
+|[SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities](https://arxiv.org/abs/2305.11000)|[SpeechGPT](https://github.com/0nutation/SpeechGPT)|arXiv 2023<br>复旦|**SpeechGPT**; 既能理解音频又能生成音频的LLM|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/LLM/SpeechGPT.html)|
 
 ### 多模态对话数据集
 
