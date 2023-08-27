@@ -51,6 +51,14 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models](https://arxiv.org/abs/2304.10592)|[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)|arXiv 2023|**MiniGPT-4**; 可以理解图像的LLM; 模型结构与 BLIP-2 类似|-|
 |[SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities](https://arxiv.org/abs/2305.11000)|[SpeechGPT](https://github.com/0nutation/SpeechGPT)|arXiv 2023<br>复旦|**SpeechGPT**; 既能理解音频又能生成音频的LLM|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/LLM/SpeechGPT.html)|
 
+
+### 多模态预训练
+
+|paper|github|收录&作者|简介|笔记|
+|:-:|:-:|:-:|:-:|:-:|
+|[PaCE: Unified Multi-modal Dialogue Pre-training with Progressive and Compositional Experts](https://aclanthology.org/2023.acl-long.749/)|[PaCE](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/pace)|ACL 2023|**PaCE**; 多模态预训练; 分治方法, 共有五个专家(caption、context、image、grounding(语境)和generation), 可以应用于意图预测、对话检索、对话状态跟踪、回复生成等下游任务。|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/multimodal_pretraining/PaCE：Unified%20Multi-modal%20Dialogue%20Pre-training%20with%20Progressive%20and%20Compositional%20Experts.html)|
+
+
 ### 多模态对话数据集
 
 |paper|源码|收录|简介|笔记|
