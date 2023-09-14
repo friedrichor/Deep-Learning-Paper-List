@@ -44,12 +44,78 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 |[Learning Transferable Visual Models From Natural Language Supervision]()|[code](https://github.com/OpenAI/CLIP)|ICML 2021|**CLIP**; 对比学习; Zero-shot; Prompt; 迁移能力很强，仅仅 zero-shot 就能和有监督训练的模型打成平手|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/多模态经典模型/CLIP.html)|[视频](https://www.bilibili.com/video/BV1SL4y1s7LQ/)|
 
 
-### 多模态LLM
+### MLLMs (Multimodal Large Language Models)
 
-|paper|github|收录&作者|简介|笔记|
+|paper|github|收录&作者|时间|简介|笔记|
 |:-:|:-:|:-:|:-:|:-:|
 |[MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models](https://arxiv.org/abs/2304.10592)|[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)|arXiv 2023|**MiniGPT-4**; 可以理解图像的LLM; 模型结构与 BLIP-2 类似|-|
 |[SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities](https://arxiv.org/abs/2305.11000)|[SpeechGPT](https://github.com/0nutation/SpeechGPT)|arXiv 2023<br>复旦|**SpeechGPT**; 既能理解音频又能生成音频的LLM|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/LLM/SpeechGPT.html)|
+|[Generative Pretraining in Multimodality](https://arxiv.org/abs/2307.05222)|[Emu](https://github.com/baaivision/Emu)|arXiv<br>北京人工智能研究院;清华;北大|2023.07|**Emu**;不加区别地接收任何单模态或多模态数据输入(例如，交错的图像、文本和视频);包括图像字幕，视觉问题回答，视频问题回答和文本到图像生成|-|
+
+#### **LLaVA**
+**Paper:** [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)  
+**Github:** https://github.com/haotian-liu/LLaVA  
+**Record:** arXiv  
+**Authors' Sources:** Wisconsin–Madison大学;微软研究院;Columbia大学  
+**Submission time:** 2023.04  
+**Brief Introduction:** 使用GPT-4生成指令数据，指令微调，模型与MiniGPT-4相似
+
+#### **Emu**
+**Paper:** [Generative Pretraining in Multimodality](https://arxiv.org/abs/2307.05222)  
+**Github:** https://github.com/baaivision/Emu  
+**Record:** arXiv  
+**Authors' Sources:** 北京人工智能研究院;清华;北大  
+**Submission time:** 2023.07  
+**Brief Introduction:** 图像理解，图像生成，视频理解，多模态任意位置。  
+Emu可以作为图像到文本和文本到图像任务的通用多模式界面，并支持在上下文中生成图像和文本。在广泛的zero-shot/few-shot任务，包括图像描述，视觉问题回答，视频问题回答和文本到图像生成，Emu展示了高超的性能相比，最先进的大型多模态模型。  
+
+
+
+#### **SEED**
+**Paper:** [Planting a SEED of Vision in Large Language Model](https://arxiv.org/abs/2307.08041)  
+**Github:** https://github.com/AILab-CVC/SEED  
+**Record:** arXiv  
+**Authors' Sources:** 腾讯  
+**Submission time:** 2023.07  
+**Brief Introduction:** 一个精心设计的image tokenizer，它使大型语言模型具有同时查看和绘制的新兴能力。
+In this study, we identify two crucial principles for the architecture and training of SEED that effectively ease subsequent alignment with LLMs. (1) Image tokens should be independent of 2D physical patch positions and instead be produced with a 1D causal dependency, exhibiting intrinsic interdependence that aligns with the left-to-right autoregressive prediction mechanism in LLMs. (2) Image tokens should
+capture high-level semantics consistent with the degree of semantic abstraction in words, and be optimized for both discriminativeness and reconstruction during the tokenizer training phase. 因此，通过高效的LoRA调优结合SEED，现有的LLM能够执行image-to-text和text-to-image的生成。
+
+
+#### ****
+**Paper:** []()  
+**Github:**   
+**Record:** arXiv  
+**Authors' Sources:**   
+**Submission time:** 2023.04  
+**Brief Introduction:** 
+
+
+#### ****
+**Paper:** []()  
+**Github:**   
+**Record:** arXiv  
+**Authors' Sources:**   
+**Submission time:** 2023.04  
+**Brief Introduction:** 
+
+
+#### ****
+**Paper:** []()  
+**Github:**   
+**Record:** arXiv  
+**Authors' Sources:**   
+**Submission time:** 2023.04  
+**Brief Introduction:** 
+
+
+#### ****
+**Paper:** []()  
+**Github:**   
+**Record:** arXiv  
+**Authors' Sources:**   
+**Submission time:** 2023.04  
+**Brief Introduction:** 
 
 
 ### 多模态预训练
