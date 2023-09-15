@@ -256,7 +256,7 @@ Emu可以作为图像到文本和文本到图像任务的通用多模式界面�
 | [Towards Unified Prompt Tuning for Few-shot Text Classification](https://arxiv.org/abs/2205.05313) |  -   | 2022 | 提出了统一的 Prompt Tuning 模版用于 Few-shot 文本分类 |[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/NLP/文本分类/Towards%20Unified%20Prompt%20Tuning%20for%20Few-shot%20Text%20Classification.html)|  -   |
 
 
-### Instruction finetuning(Flan)
+### Instruction finetuning (Flan)
 |paper|源码|收录|简介|笔记|参考资料|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[Scaling Instruction-Finetuned Language Models](https://arxiv.org/abs/2210.11416)|[code(t5x)](https://github.com/google-research/t5x)|arXiv 2022|**Flan-T5,Flan-PaLM**|-|[知乎](https://zhuanlan.zhihu.com/p/580468546)|
