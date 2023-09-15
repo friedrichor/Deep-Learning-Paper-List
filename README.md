@@ -46,19 +46,72 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 
 ### MLLMs (Multimodal Large Language Models)
 
-|paper|github|收录&作者|时间|简介|笔记|
-|:-:|:-:|:-:|:-:|:-:|
-|[MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models](https://arxiv.org/abs/2304.10592)|[MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)|arXiv 2023|**MiniGPT-4**; 可以理解图像的LLM; 模型结构与 BLIP-2 类似|-|
-|[SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities](https://arxiv.org/abs/2305.11000)|[SpeechGPT](https://github.com/0nutation/SpeechGPT)|arXiv 2023<br>复旦|**SpeechGPT**; 既能理解音频又能生成音频的LLM|[笔记](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/LLM/SpeechGPT.html)|
-|[Generative Pretraining in Multimodality](https://arxiv.org/abs/2307.05222)|[Emu](https://github.com/baaivision/Emu)|arXiv<br>北京人工智能研究院;清华;北大|2023.07|**Emu**;不加区别地接收任何单模态或多模态数据输入(例如，交错的图像、文本和视频);包括图像字幕，视觉问题回答，视频问题回答和文本到图像生成|-|
-
 #### **LLaVA**
 **Paper:** [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)  
 **Github:** https://github.com/haotian-liu/LLaVA  
 **Record:** arXiv  
 **Authors' Sources:** Wisconsin–Madison大学;微软研究院;Columbia大学  
 **Submission time:** 2023.04  
-**Brief Introduction:** 使用GPT-4生成指令数据，指令微调，模型与MiniGPT-4相似
+**Brief Introduction:** 基于 BLIP-2 的模型结构;模型与MiniGPT-4相似;使用GPT-4生成指令数据，指令微调，  
+
+#### **MiniGPT-4**
+**Paper:** [MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models](https://arxiv.org/abs/2304.10592)  
+**Github:** https://github.com/Vision-CAIR/MiniGPT-4  
+**Record:** arxiv  
+**Authors' Sources:**   
+**Submission time:** 2023.04  
+**Brief Introduction:** MLLM;基于 BLIP-2 的模型结构;模型与LLaVA相似  
+
+#### **InstructBLIP**
+**Paper:** [InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning](https://arxiv.org/abs/2305.06500)  
+**Github:** https://github.com/salesforce/LAVIS/tree/main/projects/instructblip  
+**Record:** arXiv  
+**Authors' Sources:** Salesforce Research;香港科技大学;南洋理工大学  
+**Submission time:** 2023.05  
+**Brief Introduction:** 继BLIP、BLIP-2的工作，指令微调。  
+
+#### **SpeechGPT**
+**Paper:** [SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities](https://arxiv.org/abs/2305.11000)  
+**Github:** https://github.com/0nutation/SpeechGPT  
+**Record:** arxiv  
+**Authors' Sources:** 北京人工智能研究院;清华大学;北京大学  
+**Submission time:** 2023.05  
+**Brief Introduction:** **音频理解，音频生成**  
+**Personal note**: [Note](https://friedrichor.github.io/Deep-Learning-Paper-List/Multimodal/LLM/SpeechGPT.html)
+
+#### **FROMAGe**
+**Paper:** [Grounding Language Models to Images for Multimodal Inputs and Outputs](https://openreview.net/forum?id=ElaajXDEKR)  
+**Github:** https://github.com/kohjingyu/fromage  
+**Record:** ICML  
+**Authors' Sources:** 卡内基梅隆大学  
+**Submission time:** 2023.06  
+**Brief Introduction:** **图像理解，图像检索，图像任意位置**  
+
+#### **GILL**
+**Paper:** [Generating Images with Multimodal Language Models](https://arxiv.org/abs/2305.17216)  
+**Github:** https://github.com/kohjingyu/gill  
+**Record:** arxiv  
+**Authors' Sources:** 卡内基梅隆大学  
+**Submission time:** 2023.06  
+**Brief Introduction:** **图像理解，图像生成，图像检索，图像任意位置**  
+对FROMAGe的改进
+
+#### **Large Multimodal Models: Notes on CVPR 2023 Tutorial**
+**Paper:** [Large Multimodal Models: Notes on CVPR 2023 Tutorial](https://arxiv.org/abs/2306.14895)  
+**Github:**   
+**Record:** arxiv  
+**Authors' Sources:** 微软研究院  
+**Submission time:** 2023.06  
+**Brief Introduction:** a summary of MLLMs    
+
+#### **SVIT**
+**Paper:** [SVIT: Scaling up Visual Instruction Tuning](https://arxiv.org/abs/2307.04087)  
+**Github:**   
+**Record:** arxiv  
+**Authors' Sources:**   
+**Submission time:** 2023.07  
+**Brief Introduction:** **大规模视觉指令微调数据集 Sale up Visual Instruction Tuning (SVIT)**
+构建一个包含420万视觉指令调整数据的数据集，包括160万对话问答(QA)对、160万复杂推理QA对、1.0万参考QA对和106K详细图像描述的数据集。  
 
 #### **Emu**
 **Paper:** [Generative Pretraining in Multimodality](https://arxiv.org/abs/2307.05222)  
@@ -66,10 +119,8 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 **Record:** arXiv  
 **Authors' Sources:** 北京人工智能研究院;清华;北大  
 **Submission time:** 2023.07  
-**Brief Introduction:** 图像理解，图像生成，视频理解，多模态任意位置。  
-Emu可以作为图像到文本和文本到图像任务的通用多模式界面，并支持在上下文中生成图像和文本。在广泛的zero-shot/few-shot任务，包括图像描述，视觉问题回答，视频问题回答和文本到图像生成，Emu展示了高超的性能相比，最先进的大型多模态模型。  
-
-
+**Brief Introduction:** **图像理解，图像生成，视频理解，多模态任意位置**  
+Emu可以作为图像到文本和文本到图像任务的通用多模式界面，并支持在上下文中生成图像和文本。在广泛的zero-shot/few-shot任务，包括图像描述，视觉问题回答，视频问题回答和文本到图像生成，Emu展示了高超的性能相比，最先进的大型多模态模型。    
 
 #### **SEED**
 **Paper:** [Planting a SEED of Vision in Large Language Model](https://arxiv.org/abs/2307.08041)  
@@ -77,45 +128,35 @@ Emu可以作为图像到文本和文本到图像任务的通用多模式界面�
 **Record:** arXiv  
 **Authors' Sources:** 腾讯  
 **Submission time:** 2023.07  
-**Brief Introduction:** 一个精心设计的image tokenizer，它使大型语言模型具有同时查看和绘制的新兴能力。
-In this study, we identify two crucial principles for the architecture and training of SEED that effectively ease subsequent alignment with LLMs. (1) Image tokens should be independent of 2D physical patch positions and instead be produced with a 1D causal dependency, exhibiting intrinsic interdependence that aligns with the left-to-right autoregressive prediction mechanism in LLMs. (2) Image tokens should
-capture high-level semantics consistent with the degree of semantic abstraction in words, and be optimized for both discriminativeness and reconstruction during the tokenizer training phase. 因此，通过高效的LoRA调优结合SEED，现有的LLM能够执行image-to-text和text-to-image的生成。
+**Brief Introduction:** **图像理解，图像生成**
+一个精心设计的image tokenizer，它使大型语言模型具有同时查看和绘制的新兴能力。提出了 SEED 架构和训练的两个关键原则，从而有效地简化了与 LLM 的对齐。(1) 图像标记应独立于二维物理斑块位置，而是以一维因果关系产生，表现出与 LLM 中从左到右自回归预测机制一致的内在相互依存关系。(2) Image tokens应捕捉与词的语义抽象程度相一致的高级语义，并在标记符训练阶段对识别性和重构性进行优化。因此，通过高效的LoRA调优结合SEED，现有的LLM能够执行image-to-text和text-to-image的生成。  
 
+#### **SEED-Bench**
+**Paper:** [SEED-Bench: Benchmarking Multimodal LLMs with Generative Comprehension](https://arxiv.org/abs/2307.16125)  
+**Github:** https://github.com/AILab-CVC/SEED-Bench  
+**Record:** arXiv  
+**Authors' Sources:** 腾讯  
+**Submission time:** 2023.07  
+**Brief Introduction:** 评估 MLLM 的 benchmark。
+将MLLMs中生成理解的评估作为全面评估生成模型的一个初步步骤。SEED-Bench由19K个多选题组成，配有精确的人工注释(比现有基准大×6)，涵盖了12个评估维度，包括对图像和视频形态的理解。我们开发了一个针对特定评估维度生成多项选择题的高级pipeline，集成了自动过滤和手动验证过程。基于人类注释的groundtruth选项的多项选择题能够客观、高效地评估模型性能，在评估过程中不需要人工或GPT干预。我们进一步评估了18个模型在所有12个维度上的表现，涵盖了空间和时间理解。通过评估结果揭示现有MLLMs的局限性，我们的目标是为激励未来的研究提供见解。
+
+
+#### **Qwen-VL**
+**Paper:** [Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond]()  
+**Github:** https://arxiv.org/abs/2308.12966  
+**Record:** arXiv  
+**Authors' Sources:** 阿里  
+**Submission time:** 2023.08  
+**Brief Introduction:** **图像理解**
+由Qwen-VL和Qwen-VL-chat组成的Qwen-VL和Qwen-VL-chat在图像描述、问答、视觉定位和灵活交互等任务中表现出色。评估涵盖了广泛的任务，包括zero-shot captioning，视觉或文件的视觉问题回答，并接地。我们演示了Qwen-VL优于现有LVLMs。
 
 #### ****
 **Paper:** []()  
 **Github:**   
-**Record:** arXiv  
+**Record:** arxiv  
 **Authors' Sources:**   
-**Submission time:** 2023.04  
-**Brief Introduction:** 
-
-
-#### ****
-**Paper:** []()  
-**Github:**   
-**Record:** arXiv  
-**Authors' Sources:**   
-**Submission time:** 2023.04  
-**Brief Introduction:** 
-
-
-#### ****
-**Paper:** []()  
-**Github:**   
-**Record:** arXiv  
-**Authors' Sources:**   
-**Submission time:** 2023.04  
-**Brief Introduction:** 
-
-
-#### ****
-**Paper:** []()  
-**Github:**   
-**Record:** arXiv  
-**Authors' Sources:**   
-**Submission time:** 2023.04  
-**Brief Introduction:** 
+**Submission time:** 2023.0  
+**Brief Introduction:**   
 
 
 ### 多模态预训练
