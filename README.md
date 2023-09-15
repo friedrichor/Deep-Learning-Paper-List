@@ -106,7 +106,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 
 #### **SVIT**
 **Paper:** [SVIT: Scaling up Visual Instruction Tuning](https://arxiv.org/abs/2307.04087)  
-**Github:**   
+**Github:** https://github.com/BAAI-DCAI/Visual-Instruction-Tuning  
 **Record:** arxiv  
 **Authors' Sources:**   
 **Submission time:** 2023.07  
