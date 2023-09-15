@@ -50,7 +50,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 **Paper:** [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)  
 **Github:** https://github.com/haotian-liu/LLaVA  
 **Record:** arXiv  
-**Authors' Sources:** Wisconsin–Madison大学;微软研究院;Columbia大学  
+**Authors' Sources:** Wisconsin–Madison大学;微软研究院;哥伦比亚大学  
 **Submission time:** 2023.04  
 **Brief Introduction:** 基于 BLIP-2 的模型结构;模型与MiniGPT-4相似;使用GPT-4生成指令数据，指令微调，  
 
@@ -58,7 +58,7 @@ List of deep learning papers, including CV (Computer Vision), NLP (Natural Langu
 **Paper:** [MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models](https://arxiv.org/abs/2304.10592)  
 **Github:** https://github.com/Vision-CAIR/MiniGPT-4  
 **Record:** arxiv  
-**Authors' Sources:**   
+**Authors' Sources:** 阿卜杜拉国王科技大学  
 **Submission time:** 2023.04  
 **Brief Introduction:** MLLM;基于 BLIP-2 的模型结构;模型与LLaVA相似  
 
