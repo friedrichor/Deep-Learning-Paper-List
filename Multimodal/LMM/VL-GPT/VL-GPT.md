@@ -32,9 +32,9 @@ for Vision and Language Understanding and Generation</p>
 
 为了扩展在多模态环境下生成图像的能力，某些工作，例如 Visual ChatGPT，试图通过传输文本消息将 LLMs 与图像生成工具连接在级联 pipeline 中，这不可避免地引入了不稳定性和噪声。或者，另一种研究是通过端到端方式优化模型来实现的。通过将输出空间与图像扩散模型对齐，VL 模型不仅可以感知图像和文本，还可以生成图像和文本。
 
-大型语言模型的一个关键特征是自回归建模，即预测下一个 token，这有助于以统一的方式理解和生成语言。然而，在上述研究中，由于 LLM 输入端和输出端的图像 embeddings 不一致，迫使模型对输入图像和生成的图像进行不同的处理，导致图像理解和生成需要单独建模。同时，这种差异也阻碍了自回归训练损失在图像 embeddings 上的实现。
+&emsp;&emsp;大型语言模型的一个关键特征是自回归建模，即预测下一个 token，这有助于以统一的方式理解和生成语言。然而，在上述研究中，由于 LLM 输入端和输出端的图像 embeddings 不一致，迫使模型对输入图像和生成的图像进行不同的处理，导致图像理解和生成需要单独建模。同时，这种差异也阻碍了自回归训练损失在图像 embeddings 上的实现。
 
-在本研究中，我们介绍了 VL-GPT，这是一种大型视觉语言生成预训练 transformer，可以使用自回归目标统一训练视觉和语言数据，如 Fig. [1](#figure_1) 所示。为了实现这一目标，我们提出了一个图像 tokenizer-detokenizer 框架，用于原始图像 pixels 和连续视觉 embeddings 之间的转换，类似于语言模型中的文本 tokenization。该框架包括图像 tokenizer 和图像 detokenizer，其中 tokenizer将原始图像编码为连续视觉 embeddings 序列，而 detokenizer 将连续 embeddings 解码为像素空间。为了获得丰富图像细节和语义信息的视觉连续 embeddings，我们使用预训练编码器 (即 CLIP) 提取的图像 embeddings 及其相应的 caption embeddings 作为框架的训练监督。此外，通过对预训练图像编码器和高质量图像扩散模型进行权重初始化，提高了框架训练的效率。
+&emsp;&emsp;在本研究中，我们介绍了 VL-GPT，这是一种大型视觉语言生成预训练 transformer，可以使用自回归目标统一训练视觉和语言数据，如 Fig. [1](#figure_1) 所示。为了实现这一目标，我们提出了一个图像 tokenizer-detokenizer 框架，用于原始图像 pixels 和连续视觉 embeddings 之间的转换，类似于语言模型中的文本 tokenization。该框架包括图像 tokenizer 和图像 detokenizer，其中 tokenizer将原始图像编码为连续视觉 embeddings 序列，而 detokenizer 将连续 embeddings 解码为像素空间。为了获得丰富图像细节和语义信息的视觉连续 embeddings，我们使用预训练编码器 (即 CLIP) 提取的图像 embeddings 及其相应的 caption embeddings 作为框架的训练监督。此外，通过对预训练图像编码器和高质量图像扩散模型进行权重初始化，提高了框架训练的效率。
 
 <div class="columns is-centered" id="figure_1">
 <center><img src="figure_1.png" width="90%"></center>
@@ -45,9 +45,9 @@ for Vision and Language Understanding and Generation</p>
 </figcaption>
 </div>
 
-通过使用图像 tokenizer-detokenizer 框架，视觉 embeddings 可以在 transformer 模型的输入端和输出端实现一致性。因此，交错的图像-文本数据可以以统一的自回归方式进行训练。具体来说，图像 tokenizer 和现有的文本 tokenizer (即 BPE tokenizer) 首先将图像和文本转换成由交错连续视觉 embeddings 和离散文本 tokens 组成的多模态序列。然后可以训练 transformer 来预测这个多模态序列中的下一个 embedding 或 token，对连续视觉 embeddings 使用均方误差 (MSE) 损失，对离散文本 tokens 使用交叉熵损失。与之前的研究相反，多模态序列中的所有 embeddings 都可以接受自回归损失的监督。在生成阶段，视觉 embeddings 和文本 tokens 可以无区分地自回归生成，随后分别由图像 detokenizer 和文本 detokenizer 解码为原始图像和文本。
+&emsp;&emsp;通过使用图像 tokenizer-detokenizer 框架，视觉 embeddings 可以在 transformer 模型的输入端和输出端实现一致性。因此，交错的图像-文本数据可以以统一的自回归方式进行训练。具体来说，图像 tokenizer 和现有的文本 tokenizer (即 BPE tokenizer) 首先将图像和文本转换成由交错连续视觉 embeddings 和离散文本 tokens 组成的多模态序列。然后可以训练 transformer 来预测这个多模态序列中的下一个 embedding 或 token，对连续视觉 embeddings 使用均方误差 (MSE) 损失，对离散文本 tokens 使用交叉熵损失。与之前的研究相反，多模态序列中的所有 embeddings 都可以接受自回归损失的监督。在生成阶段，视觉 embeddings 和文本 tokens 可以无区分地自回归生成，随后分别由图像 detokenizer 和文本 detokenizer 解码为原始图像和文本。
 
-由于统一建模，VL 模型可以在大规模的图像-文本对和交错图像-文本数据上进行预训练。在完成预训练后，该模型能够感知任意多模态输入，并产生不同模态的响应 (例如，文本、图像或其交错的内容)，使其能够以 zero-shot 或 few-shot 的方式推广到广泛的视觉和语言理解和生成任务。此外，预训练模型在多模态上下文学习中表现出吸引人的涌现特性，因为当提供多模态提示时，它可以有效地处理新的未见过的任务。VL 生成预训练 Transformer 模型，简称 VL-GPT，具有作为多模态社区的强大基础模型的潜力，类似于 GPT 家族在 NLP 中的作用。我们的贡献总结如下:
+&emsp;&emsp;由于统一建模，VL 模型可以在大规模的图像-文本对和交错图像-文本数据上进行预训练。在完成预训练后，该模型能够感知任意多模态输入，并产生不同模态的响应 (例如，文本、图像或其交错的内容)，使其能够以 zero-shot 或 few-shot 的方式推广到广泛的视觉和语言理解和生成任务。此外，预训练模型在多模态上下文学习中表现出吸引人的涌现特性，因为当提供多模态提示时，它可以有效地处理新的未见过的任务。VL 生成预训练 Transformer 模型，简称 VL-GPT，具有作为多模态社区的强大基础模型的潜力，类似于 GPT 家族在 NLP 中的作用。我们的贡献总结如下:
 
 - 我们提出了一种图像 tokenizer-detokenizer 框架，将图像转换为连续 embeddings 并进行重构，同时探索了该框架的有效训练方法。图像 tokenizer 和 detokenizer 可以有效地保留原始图像的语义信息和像素细节。
 - 我们介绍了 VL-GPT，一个用于视觉和语言 (VL) 理解和生成任务的生成预训练转换模型。该模型可以以统一的自回归方式在大规模多模态语料库上进行预训练，即在包含连续视觉 embeddings 和离散文本 tokens 的多模态序列中预测下一个 token，而不进行任何区分。
@@ -124,14 +124,11 @@ $$
 
 ## <font face="Times New Roman">4.3 ImageTokenizer and Detokenizer Performance</font>
 
-图像 tokenizer-detokenizer 框架设计用于在像素空间和连续视觉 embeddings 之间转换图像。为了评估其有效性，我们采用计算 CLIP 相似度的方法作为我们框架的评估指标，如 SEED 中实现的那样。如 Tab. [1](#table_1) 所示，与使用量化视觉 tokens 的 SEED 相比，我们的框架实现了明显更好的语义一致性。
-
 <div class="columns is-centered" id="table_1"> 
 <center><img src="table_1.png" width="45%"></center>
 </div>
 
-
-此外，我们在 Fig. [3](#figure_3) 中展示了由我们的框架生成的重建图像的可视化。通过估计图像 condition embedding和文本 condition embedding，并利用它们来指导 diffusion decoder 的生成过程，我们的图像 detokenizer 能够生成在空间外观和语义信息方面具有高一致性的图像。
+图像 tokenizer-detokenizer 框架设计用于在像素空间和连续视觉 embeddings 之间转换图像。为了评估其有效性，我们采用计算 CLIP 相似度的方法作为我们框架的评估指标，如 SEED 中实现的那样。如 Tab. [1](#table_1) 所示，与使用量化视觉 tokens 的 SEED 相比，我们的框架实现了明显更好的语义一致性。
 
 <div class="columns is-centered" id="figure_3_2">
 <center><img src="figure_3.png" width="45%"></center>
@@ -139,6 +136,9 @@ $$
 <font face="Times New Roman">Figure 3：通过使用图像 condition embedding (<math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>z</mi><mi>v</mi></msub></math>) 或文本condition embedding (<math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>z</mi><mi>t</mi></msub></math>) 或两种 condition embedding (<math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msub><mi>z</mi><mi>v</mi></msub><mo>+</mo><msub><mi>z</mi><mi>t</mi></msub></mrow></math>) 来重建图像 tokenizer-detokenizer 框架。更多的例子包含在附录中。</font>
 </p>
 </div>
+
+
+&emsp;&emsp;此外，我们在 Fig. [3](#figure_3) 中展示了由我们的框架生成的重建图像的可视化。通过估计图像 condition embedding和文本 condition embedding，并利用它们来指导 diffusion decoder 的生成过程，我们的图像 detokenizer 能够生成在空间外观和语义信息方面具有高一致性的图像。
 
 ## <font face="Times New Roman">4.4 Evaluation of our VL-GPT</font>
 
