@@ -4,20 +4,12 @@
 </style>
 </head>
 
-
 [TOC]
 
-<center>
-<B>
-<font size=5>
-<p>VL-GPT: A Generative Pre-trained Transformer
-for Vision and Language Understanding and Generation</p>
-</font>
-</B>
-</center>
-
-
-
+<p style="text-align: center; font-weight: bold; font-size: 24px;">
+VL-GPT: A Generative Pre-trained Transformer<br>
+for Vision and Language Understanding and Generation
+</p>
 **Title:** VL-GPT: A Generative Pre-trained Transformer for Vision and Language Understanding and Generation
 **Paper:** http://arxiv.org/abs/2312.09251
 **Submission Date:** 2023.12.14
@@ -50,7 +42,7 @@ for Vision and Language Understanding and Generation</p>
 &emsp;&emsp;由于统一建模，VL 模型可以在大规模的图像-文本对和交错图像-文本数据上进行预训练。在完成预训练后，该模型能够感知任意多模态输入，并产生不同模态的响应 (例如，文本、图像或其交错的内容)，使其能够以 zero-shot 或 few-shot 的方式推广到广泛的视觉和语言理解和生成任务。此外，预训练模型在多模态上下文学习中表现出吸引人的涌现特性，因为当提供多模态提示时，它可以有效地处理新的未见过的任务。VL 生成预训练 Transformer 模型，简称 VL-GPT，具有作为多模态社区的强大基础模型的潜力，类似于 GPT 家族在 NLP 中的作用。我们的贡献总结如下:
 
 - 我们提出了一种图像 tokenizer-detokenizer 框架，将图像转换为连续 embeddings 并进行重构，同时探索了该框架的有效训练方法。图像 tokenizer 和 detokenizer 可以有效地保留原始图像的语义信息和像素细节。
-- 我们介绍了 VL-GPT，一个用于视觉和语言 (VL) 理解和生成任务的生成预训练转换模型。该模型可以以统一的自回归方式在大规模多模态语料库上进行预训练，即在包含连续视觉 embeddings 和离散文本 tokens 的多模态序列中预测下一个 token，而不进行任何区分。
+- 我们介绍了 VL-GPT，一个用于视觉和语言 (VL) 理解和生成任务的 generative pre-trained transformer 模型。该模型可以以统一的自回归方式在大规模多模态语料库上进行预训练，即在包含连续视觉 embeddings 和离散文本 tokens 的多模态序列中预测下一个 token，而不进行任何区分。
 
 - 在 zero-shot 和 few-shot 设置下，VL-GPT 在各种 VL 理解和生成基准上表现出具有竞争力的性能，包括 image captioning、视觉问答和 text-to-image 生成。当提供多模态提示时，它还展示了一种吸引人的多模态上下文学习能力。此外，它还显示出通过指令调优作为通用多模态助手的潜力。
 
@@ -64,28 +56,39 @@ for Vision and Language Understanding and Generation</p>
 
 **Architecture** 我们的图像 tokenizer-detokenizer 框架的整体架构如 Fig. [1](#figure_1) 所示。它由两个主要组件组成：一个 tokenizer $\mathcal{E}$ 负责将图像编码为连续的视觉 embeddings，一个 detokenizer $\mathcal{D}$ 负责将视觉 embeddings 解码回原始图像。
 
-&emsp;&emsp;形式上，图像 tokenizer $\mathcal{E}$ 使用图像编码器 (例如 ViT) 从给定图像 $\boldsymbol{x}$ 中提取空间 patch 特征 $\boldsymbol{x}^p$。随后，使用标准的 decoder-only causal transformer 将 patch 特征$\boldsymbol{x}^p$ 转换为 1D (一维) 视觉 embeddings $\boldsymbol{x}^v \in \mathbb{R}^{N \times d}$，其中 $N$ 表示视觉 embeddings的数量，$d$ 为 embedding 维数。一维连续的视觉 embeddings $\boldsymbol{x}^v$ 作为我们的视觉语言模型的输入 embeddings，类似于语言模型中的单词 tokens。
+&emsp;&emsp;<span style="background-color: #AFEEEE;">形式上，图像 tokenizer $\mathcal{E}$ 使用图像编码器 (例如 ViT) 从给定图像 $\boldsymbol{x}$ 中提取空间 patch 特征 $\boldsymbol{x}^p$。随后，使用标准的 decoder-only causal transformer 将 patch 特征 $\boldsymbol{x}^p$ 转换为 1D (一维) 视觉 embeddings $\boldsymbol{x}^v \in \mathbb{R}^{N \times d}$，其中 $N$ 表示视觉 embeddings 的数量，$d$ 为 embedding 维数。</span>一维连续的视觉 embeddings $\boldsymbol{x}^v$ 作为我们的视觉语言模型的输入 embeddings，类似于语言模型中的单词 tokens。
 
-&emsp;&emsp;受当前具有优异性能和可访问性的图像扩散模型的启发，我们的图像 detokenizer $\mathcal{D}$ 学习 latent diffusion model，将视觉 embeddings $\boldsymbol{x}^v$ 解码为图像。具体来说，采用 transformer 解码器从 $\boldsymbol{x}^v$ 估计 condition embedding $\boldsymbol{z}$。然后，从预训练的图像扩散模型初始化的 diffusion decoder 可以根据估计的 condition embedding $\boldsymbol{z}$ 生成图像 $\boldsymbol{\hat{x}}$。
+&emsp;&emsp;受当前具有优异性能和可访问的图像扩散模型的启发，我们的图像 detokenizer $\mathcal{D}$ 学习 latent diffusion model，将视觉 embeddings $\boldsymbol{x}^v$ 解码为图像。具体来说，采用 transformer 解码器从 $\boldsymbol{x}^v$ 估计 condition embedding $\boldsymbol{z}$。然后，从预训练的图像扩散模型初始化的 diffusion decoder 可以根据估计的 condition embedding $\boldsymbol{z}$ 生成图像 $\boldsymbol{\hat{x}}$。
 
 <div class="columns is-centered" id="figure_2">
 <center><img src="figure_2.png" width="45%"></center>
 <figcaption>
 <p style="text-align: justify; font-size: 14px;">
-<font face="Times New Roman">Figure 2：我们的图像 tokenizer-detokenizer 框架的训练方案，该框架由预训练的图像扩散模型中冻结的图像和文本编码器监督。只有 tokenizer 中的causal transformer 和 detokenizer 中的 transformer decoder 需要训练，detokenizer 中的 diffusion decoder 在训练过程中不需要训练。</font>
+<font face="Times New Roman">Figure 2：我们的图像 tokenizer-detokenizer 框架的训练方案，该框架由预训练的图像扩散模型中冻结的图像和文本编码器监督。只有 tokenizer 中的 causal transformer 和 detokenizer 中的 transformer decoder 需要训练，detokenizer 中的 diffusion decoder 在训练过程中不需要训练。</font>
 </p>
 </figcaption>
 </div>
-
 **Training** 尽管使用预训练模型进行初始化，但对图像 tokenizer 和 detokenizer 进行全面的端到端优化需要大量数据和可观的训练成本。为了追求高效的训练，我们选择在图像 detokenizer 中训练 transformer 解码器，以估计 diffusion decoder 所使用的 condition embedding，如 Fig. [2](#figure_2) 所示。值得注意的是，在框架训练中没有使用 diffusion decoder，包括其 U-Net 和 VAE 模块，大大提高了训练过程的效率。
 
-&emsp;&emsp;如 Fig. [2](#figure_2) 所示，我们的框架的训练目标是同时重构图像 condition embedding $e_v$ 和文本条件embedding $e_t$。这一设计将我们的框架与之前的工作区别开来，这些工作只将它们的中间输出与扩散模型的文本编码器产生的文本 embedding 对齐。具体来说，我们通过最小化以下损失函数(权值为 $\lambda_1$ 和 $\lambda_2$)来优化框架:
+&emsp;&emsp;如 Fig. [2](#figure_2) 所示，我们的框架的训练目标是同时重构图像 condition embedding $e_v$ 和文本 condition embedding $e_t$。这一设计将我们的框架与之前的工作区别开来，这些工作只将它们的中间输出与扩散模型的文本编码器产生的文本 embedding 对齐。具体来说，我们通过最小化以下损失函数 (权值为 $\lambda_1$ 和 $\lambda_2$)来优化框架：
 
 $$
 L(\boldsymbol{z})= \lambda_1 * \operatorname{MSE}(z_v, e_v) + \lambda_2 * \operatorname{MSE}(z_t, e_t)
 \label{eq:1}
 $$
-其中，$\operatorname{MSE}\left(\cdot\right)$ 为误差均方损失，$z_v$ 和 $z_t$ 分别为估计的图像 condition embedding 和估计的文本 condition embedding。在推理过程中，这两种类型的 condition embedding 共同有助于生成图像。我们的图像 tokenizer-detokenizer 框架也可以在仅重建图像条件 embedding (如果$\lambda_2=0$) 或仅重建文本 condition embedding (如果 $\lambda_1=0$) 时工作。此外，估计图像 embedding 的训练只需要视觉数据，这比估计文本 embedding 更加训练友好。然而，我们在 Sec. 4.5 中的实验表明，这两种类型的 embedding 是相辅相成的：文本 embedding 包含丰富的语义信息，而图像 embedding 有效地保留了图像细节。
+其中，$\operatorname{MSE}\left(\cdot\right)$ 为误差均方损失，$z_v$ 和 $z_t$ 分别为估计的图像 condition embedding 和估计的文本 condition embedding。在推理过程中，这两种类型的 condition embedding 共同作用于生成图像。我们的图像 tokenizer-detokenizer 框架也可以在仅重建图像 condition embedding (如果 $\lambda_2=0$) 或仅重建文本 condition embedding (如果 $\lambda_1=0$​) 时工作。此外，估计图像 embedding 的训练只需要视觉数据，这比估计文本 embedding 更加训练友好。然而，我们在 Sec. 4.5 中的实验表明，这两种类型的 embedding 是相辅相成的：文本 embedding 包含丰富的语义信息，而图像 embedding 有效地保留了图像细节。
+
+<blockquote>
+更多细节 (Appendix 6.1)
+<br>
+图像 tokenizer 中的视觉编码器使用 CLIP-L 初始化，而图像 detokenizer 中的 diffusion decoder 则结合了 IP-adapter Plus 的 U-Net 和 VAE 模块。这些组件在训练过程中保持冻结状态。
+<br>
+<center><img src="ip_adapter.png" width="90%"></center>
+<blockquote>
+<p>IP-adapter 讲解：<a href='https://zhuanlan.zhihu.com/p/654901321'><img src='https://img.shields.io/badge/知乎-blue.svg'></a></p>
+<p>IP-adapter 应用解读：<a href='https://zhuanlan.zhihu.com/p/672366693'><img src='https://img.shields.io/badge/知乎-blue.svg'></a></p>
+</blockquote>
+</blockquote>
 
 ## <font face="Times New Roman">3.2 VL-GPT</font>
 
@@ -114,7 +117,11 @@ $$
 
 ## <font face="Times New Roman">4.1 Datasets</font>
 
-公开可用的数据集用于 VL-GPT 训练的不同阶段。图像 tokenizer-detokenizer 框架是在CC3M、LAION-Aestheics 和 LAION-COCO 的图像-文本对上进行训练的。在 VL-GPT 的统一多模态预训练中，采用了配对和交错相结合的图像-文本数据。图像-文本对与前一阶段保持一致，而交错图像-文本序列由 Multimodal-C4 (MMC4) 和 OBELICS 获得。我们在 Flamingo 中对交错数据采用了类似的预处理技术。对于每个文档，最多随机采样 5 个图像及其相关的 caption，以构建 token 长度最多为 512 的子序列。此外，对于成对和交错的图像-文本数据，每个图像被随机放置在其对应的 caption 的之前或之后。对于 VL-GPT 的指令调优，从各种来源构建了一个组合指令调优数据集，包括来自 LLAVA 和 SVIT 的会话数据，来自 COCO Caption 的图像-文本对数据，以及来自 InstructPix2Pix 和 Magicbrush 的图像编辑数据。使用附录中提供的模板将这些数据集重组为会话格式。关于我们的训练数据集的预处理和构建的更多细节，也请参阅附录。
+公开可用的数据集用于 VL-GPT 训练的不同阶段。
+
+- 图像 tokenizer-detokenizer 框架是在CC3M、LAION-Aestheics 和 LAION-COCO 的图像-文本对上进行训练的。
+- 在 VL-GPT 的统一多模态预训练中，采用了配对和交错相结合的图像-文本数据。图像-文本对与前一阶段保持一致，而交错图像-文本序列由 Multimodal-C4 (MMC4) 和 OBELICS 获得。我们在 Flamingo 中对交错数据采用了类似的预处理技术。对于每个文档，最多随机采样 5 个图像及其相关的 caption，以构建 token 长度最多为 512 的子序列。此外，对于成对和交错的图像-文本数据，每个图像被随机放置在其对应的 caption 的之前或之后。
+- 对于 VL-GPT 的指令调优，从各种来源构建了一个组合指令调优数据集，包括来自 LLAVA 和 SVIT 的会话数据，来自 COCO Caption 的图像-文本对数据，以及来自 InstructPix2Pix 和 Magicbrush 的图像编辑数据。使用附录中提供的模板将这些数据集重组为会话格式。关于我们的训练数据集的预处理和构建的更多细节，也请参阅附录。
 
 ## <font face="Times New Roman">4.2 Training Setup</font>
 
